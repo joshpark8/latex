@@ -1,0 +1,120 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+% \usepackage{CJK}
+\usepackage{enumitem}
+\usepackage{epsf}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{latexsym}
+\usepackage{systeme}
+
+\definecolor{cyan}{HTML}{00AEEF}
+
+\newtheoremstyle{mystyle}%
+    {8pt}{5pt}%              % Space above and below
+    {}%                  % Body font
+    {}%                % Indent amount
+    {}%         % Theorem head font (bold for the title "Definition")
+    {.}%                % Punctuation after theorem head
+    {8pt}%               % Space after theorem head
+    {\ul{\textbf{#1\IfNoValueT{#2}{\ #2}}\IfNoValueT{#3}{ (#3)}}}%                % Theorem head spec
+
+\theoremstyle{mystyle}
+
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{claim}{Claim}
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem*{nb}{Nota Bene}
+\newtheorem*{problem}{Problem}
+\newtheorem*{corollary}{Corollary}
+
+\newcommand{\setproblemnumber}[1]{\setcounter{problem}{#1-1}}
+
+% >>-----------------------------------| ntheorem |-----------------------------------<<
+
+\NewDocumentEnvironment{ntheorem}{O{Theorem} o o} % O for optional label, o for optional title, o for optional number
+{
+    \vspace{0pt} % Space above to match mystyle
+    \noindent\ul{\textbf{#1}%
+    \IfNoValueF{#2}{\ \textbf{#2}}%
+    \IfNoValueF{#3}{ (#3)}%
+    \textbf{.}} % Punctuation and space after heading
+}
+{\par\vspace{5pt}} % Space below to match mystyle
+
+% >>----------------------------------------||----------------------------------------<<
+
+% >>-----------------------------------| Exercise |-----------------------------------<<
+
+\newtheorem*{etm}{\textcolor{red}{Exercise}}%
+% \let\oldexercise\exercise%
+\newenvironment{exercise}{%
+    \begingroup\color{red} % Start a color group for red text in the body
+    \etm
+    }{%
+    \endgroup\par\vspace{5pt} % End the color group
+}%
+% >>-----------------------------------| Exercise |-----------------------------------<<
+
+
+% \newtcolorbox{dfnbox}[2][]{colback=white, colframe=cyan, fonttitle=\bfseries, title=#2, #1}
+% \newtcolorbox{thmbox}[2][]{colback=white, colframe=purple, fonttitle=\bfseries, title=#2, #1}
+% \newtcolorbox{ntbox}[2][]{colback=white, colframe=gray, fonttitle=\bfseries, title=#2, #1}
+% \newtcolorbox{exbox}[2][]{colback=white, colframe=pink, coltitle=black, fonttitle=\bfseries, title=#2, #1}
+% \newtcolorbox{solbox}[2][]{
+%     colback=white,
+%     colframe=darkgray,
+%     coltitle=white,
+%     fonttitle=\bfseries,
+%     parbox=false,
+%     title=#2,
+%     #1
+% }
+
+% \newcommand{\dfn}[2]{%
+%   \refstepcounter{definition}%
+%   \begin{dfnbox}{Definition \thedefinition: #1}%
+%     #2
+%   \end{dfnbox}%
+% }
+
+% \newcommand{\thm}[2]{%
+%   \refstepcounter{theorem}%
+%   \begin{thmbox}{Theorem \thetheorem: #1}%
+%     #2
+%   \end{thmbox}%
+% }
+
+% \newcommand{\nt}[2]{%
+%   \refstepcounter{note}%
+%   \begin{ntbox}{Note \thenote: #1}%
+%     #2
+%   \end{ntbox}%
+% }
+
+% \newcommand{\ex}[2]{%
+%   \refstepcounter{example}%
+%   \begin{exbox}{Example \theexample: #1}%
+%     #2
+%   \end{exbox}%
+% }
+
+% \newcommand{\sol}[1]{%
+%   \refstepcounter{solution}%
+%   \begin{solbox}{Solution \thesubsection}%
+%     #1
+%   \end{solbox}%
+% }

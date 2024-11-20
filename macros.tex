@@ -1,0 +1,211 @@
+% macros.sty
+
+% Packages
+% \usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{CJK}
+\usepackage{enumitem}
+\usepackage{epsf}
+\usepackage{fleqn}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{systeme}
+
+\newcommand{\em}[#1]{\ensuremath{#1}}
+
+% Environments
+% !TeX add-macro: {"name": "\\dfn", "description": "Definition environment"}
+\newcommand{\dfn}[2]{\begin{definition}[#1] #2 \end{definition}}
+
+\newcommand{\thm}[1] {\begin{theorem} #1 \end{theorem}}
+\newcommand{\lem}[1] {\begin{lemma} #1 \end{lemma}}
+\newcommand{\prop}[1]{\begin{proposition} #1 \end{proposition}}
+\newcommand{\cor}[1] {\begin{corollary} #1 \end{corollary}}
+\newcommand{\ex}[1]  {\begin{example} #1 \end{example}}
+\newcommand{\nt}[1]  {\begin{note} #1 \end{note}}
+\newcommand{\rk}[1]  {\begin{remark} #1 \end{remark}}
+\newcommand{\pf}[1]  {\begin{proof} #1 \end{proof}}
+
+% General
+\newcommand*{\rtt}{\ensuremath{\sqrt{2}}}
+\newcommand*{\lt}{\left}
+\newcommand*{\rt}{\right}
+\newcommand*{\st}{\ensuremath{\ \vert \ }} % such that (set builder)
+\newcommand*{\tcdot}{\(\cdot\)} % text cdot
+\newcommand*{\imp}{\ensuremath\implies}
+\newcommand*{\eps}{\epsilon}
+\newcommand*{\veps}{\varepsilon}
+\newcommand*{\sq}{^2}
+\newcommand*{\cb}{^3}
+
+% Font
+\newcommand{\ital}[1]{\emph{#1}} % italics
+\newcommand{\bd}[1]{\textbf{#1}} % bold
+\newcommand{\ul}[1]{\underline{#1}} % underline
+
+% Graphics
+\newcommand{\img}[2]{\begin{figure}[H] % insert image file
+  \centering%
+  \includegraphics[height=#2 \textwidth]{#1}%
+  \end{figure}}
+
+% For STAT 350 "Introduction to Statistics"
+\newcommand{\dint}[2]{\int_{#1}^{#2}}
+\newcommand{\Dint}{\int_{-\infty}^{\infty}}
+
+% MA 375 "Introduction to Discrete Mathematics"
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+
+% MA 35301 "Linear Algebra II"
+\newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
+\newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
+
+% MA 341 "Foundations of Analysis"
+\newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
+
+% CS 314 "Numerical Methods"
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Exep}{\mathbb{E}}
+\newcommand{\asmp}{\textbf{Assumptions: }}
+\DeclareMathOperator{\var}{\text{Var}}
+% \newcommand{\nd}{\mathcal{N}}
+
+% MA 425 "Elements of Complex Analysis"
+% \newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
+% \newcommand{\re}{\operatorname{Re}}
+% \newcommand{\im}{\operatorname{Im}}
+% \newcommand{\Arg}{\operatorname{Arg}}
+% \newcommand{\wbar}{\overline{w}}
+% \renewcommand{\bar}[1]{\overline{#1}}
+
+% MA 450 "Honors Abstract Algebra"
+%% GROUPS
+\newcommand*{\divs}{\ensuremath{\,\big\vert\,}} % a divides k <=> a \divs k
+\newcommand*{\ndivs}{\ensuremath{\,\nmid\,}} % a does not divide k <=> a \ndivs k
+% \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newcommand*{\suth}{\text{such that}}
+\newcommand*{\homo}{\text{homomorphism}}
+\newcommand{\inv}{\ensuremath{^{-1}}}
+\newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
+
+\newcommand*{\sgp}{\ensuremath{\leq}} % subgroup
+\newcommand*{\psgp}{\ensuremath{<}} % proper subgroup
+\newcommand*{\tsgp}{\ensuremath{\{e\}}} % trivial subgroup
+\newcommand{\cyc}[1]{\ensuremath{\langle #1 \rangle}} % cyclic group
+\newcommand*{\nsgp}{\vartriangleleft} % normal subgroup
+
+\newcommand*{\iso}{\cong} % isomorphism
+
+\renewcommand*{\index}[2]{\ensuremath{[ #1 : #2 ]}} % coset index
+
+\newcommand*{\edp}{\oplus} % external direct product
+\newcommand*{\idp}{\times} % internal direct product
+\newcommand*{\kerphi}{\ker\phi} % kernel of the mapping \phi
+
+\newcommand*{\abar}{\ensuremath{\overline{a}}}
+\newcommand*{\ebar}{\ensuremath{\overline{e}}}
+\newcommand*{\xbar}{\ensuremath{\bar{x}}}
+
+\newcommand*{\Gbar}{\ensuremath{\overline{G}}}
+\newcommand*{\Hbar}{\ensuremath{\overline{H}}}
+\newcommand*{\Kbar}{\ensuremath{\overline{K}}}
+
+\newcommand*{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
+
+\newcommand{\U}[1]{U(#1)} % group of units modulo n under multiplication
+
+\newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers less than [INPUT] under addition
+\newcommand*{\Zn}{\ensuremath{\Z_n}}    % group of nonnegative integers less than n under addition
+\newcommand*{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers less than 2 under addition
+\newcommand*{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers less than 3 under addition
+\newcommand*{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers less than 4 under addition
+\newcommand*{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers less than 5 under addition
+\newcommand*{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers less than 6 under addition
+\newcommand*{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers less than 7 under addition
+\newcommand*{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers less than 8 under addition
+\newcommand*{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers less than 9 under addition
+\newcommand*{\Zte}{\ensuremath{\Z_{10}}}     % group of nonnegative integers less than 9 under addition
+
+\newcommand{\orb}[2]{\ensuremath{\operatorname{orb}_{#1}(#2)}} % orbit
+\newcommand{\stab}[2]{\ensuremath{\operatorname{stab}_{#1}(#2)}} % stabilizer
+
+\newcommand{\qg}[2]{\ensuremath{\ #1\ / \ #2\ }} % quotient group
+
+\newcommand*{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
+\newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
+
+\newcommand*{\spsgp}{Sylow \(p\)-subgroup} % sylow shortcut
+
+%% RINGS
+\renewcommand*{\char}[1]{\ensuremath{\operatorname{char}(#1)}} % characteristic
+\newcommand{\inR}{\ensuremath{\in R}}
+
+% From Math 55 and Math 145 at Harvard
+\newenvironment{subproof}[1][Proof]{%
+\begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
+{\end{proof}}
+
+
+\newcommand{\ol}{\overline}
+% \newcommand{\ul}{\underline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
+% \newcommand{\exercise}[1]{\textbf{\color{red} #1}}
+\providecommand{\half}{\frac{1}{2}}
+\newcommand{\dang}{\measuredangle} %% Directed angle
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\seg}[1]{\overline{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\argmin}{arg min}
+\DeclareMathOperator*{\argmax}{arg max}
+\newcommand{\cycsum}{\sum_{\mathrm{cyc}}}
+\newcommand{\symsum}{\sum_{\mathrm{sym}}}
+\newcommand{\cycprod}{\prod_{\mathrm{cyc}}}
+\newcommand{\symprod}{\prod_{\mathrm{sym}}}
+\newcommand{\Qed}{\begin{flushright}\qed\end{flushright}}
+\newcommand{\parinn}{\setlength{\parindent}{1cm}}
+\newcommand{\parinf}{\setlength{\parindent}{0cm}}
+% \newcommand{\norm}{\|\cdot \|}
+\newcommand{\inorm}{\norm_{\infty}}
+\newcommand{\opensets}{\{V_{\alpha}\}_{\alpha\in I}}
+\newcommand{\oset}{V_{\alpha}}
+\newcommand{\opset}[1]{V_{\alpha_{#1}}}
+\newcommand{\lub}{\text{lub}}
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\Del}[3]{\frac{\partial^{#1} #2}{\partial^{#1} #3}}
+\newcommand{\deld}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\Deld}[3]{\dfrac{\partial^{#1} #2}{\partial^{#1} #3}}
+\newcommand{\lm}{\lambda}
+\newcommand{\uin}{\mathbin{\rotatebox[origin=c]{90}{$\in$}}}
+\newcommand{\usubset}{\mathbin{\rotatebox[origin=c]{90}{$\subset$}}}
+% \newcommand{\lt}{\left}
+% \newcommand{\rt}{\right}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\exs}{\exists}
+% \newcommand{\st}{\strut}
+\newcommand{\dps}[1]{\displaystyle{#1}}
+
+\newcommand{\sol}{\setlength{\parindent}{0cm}\textbf{\textit{Solution:}}\setlength{\parindent}{1cm} }
+\newcommand{\solve}[1]{\setlength{\parindent}{0cm}\textbf{\textit{Solution: }}\setlength{\parindent}{1cm}#1 \Qed}
+
+% % From M275 "Topology" at SJSU
+% \DeclareMathOperator{\id}{id}
+% \newcommand{\taking}[1]{\xrightarrow{#1}}
+% \newcommand{\inv}{^{-1}}
+
+% % From M170 "Introduction to Graph Theory" at SJSU
+% \DeclareMathOperator{\diam}{diam}
+% \DeclareMathOperator{\ord}{ord}
+% \newcommand{\defeq}{\overset{\mathrm{def}}{=}}
+
+% % From the USAMO .tex files
+% \newcommand{\ts}{\textsuperscript}
+% \newcommand{\dg}{^\circ}
+% \newcommand{\ii}{\item}
