@@ -15,20 +15,16 @@
 \usepackage{latexsym}
 \usepackage{systeme}
 
-\newcommand{\em}[#1]{\ensuremath{#1}}
-
-% Environments
-% !TeX add-macro: {"name": "\\dfn", "description": "Definition environment"}
-\newcommand{\dfn}[2]{\begin{definition}[#1] #2 \end{definition}}
-
-\newcommand{\thm}[1] {\begin{theorem} #1 \end{theorem}}
-\newcommand{\lem}[1] {\begin{lemma} #1 \end{lemma}}
-\newcommand{\prop}[1]{\begin{proposition} #1 \end{proposition}}
-\newcommand{\cor}[1] {\begin{corollary} #1 \end{corollary}}
-\newcommand{\ex}[1]  {\begin{example} #1 \end{example}}
-\newcommand{\nt}[1]  {\begin{note} #1 \end{note}}
-\newcommand{\rk}[1]  {\begin{remark} #1 \end{remark}}
-\newcommand{\pf}[1]  {\begin{proof} #1 \end{proof}}
+% Environments (USE SNIPPETS INSTEAD)
+% \newcommand{\dfn}[2]{\begin{definition}[#1] #2 \end{definition}}
+% \newcommand{\thm}[1]{\begin{theorem} #1 \end{theorem}}
+% \newcommand{\lem}[1]{\begin{lemma} #1 \end{lemma}}
+% \newcommand{\prop}[1]{\begin{proposition} #1 \end{proposition}}
+% \newcommand{\cor}[1]{\begin{corollary} #1 \end{corollary}}
+% \newcommand{\ex}[1]{\begin{example} #1 \end{example}}
+% \newcommand{\nt}[1]{\begin{note} #1 \end{note}}
+% \newcommand{\rk}[1]{\begin{remark} #1 \end{remark}}
+% \newcommand{\pf}[1]{\begin{proof} #1 \end{proof}}
 
 % General
 \newcommand*{\rtt}{\ensuremath{\sqrt{2}}}
@@ -36,11 +32,17 @@
 \newcommand*{\rt}{\right}
 \newcommand*{\st}{\ensuremath{\ \vert \ }} % such that (set builder)
 \newcommand*{\tcdot}{\(\cdot\)} % text cdot
-\newcommand*{\imp}{\ensuremath\implies}
+\newcommand*{\imp}{\ensuremath{\implies}}
+\newcommand*{\pmi}{\ensuremath{\impliedby}}
+\newcommand*{\tiff}{\ensuremath{\iff}}
+\newcommand*{\tand}{\text{ and }}
+\newcommand*{\tor}{\text{ or }}
+\newcommand*{\tst}{\text{ such that }}
 \newcommand*{\eps}{\epsilon}
 \newcommand*{\veps}{\varepsilon}
 \newcommand*{\sq}{^2}
 \newcommand*{\cb}{^3}
+\newcommand*{\sseq}{\ensuremath{\subseteq}}
 
 % Font
 \newcommand{\ital}[1]{\emph{#1}} % italics
