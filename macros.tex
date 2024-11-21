@@ -135,7 +135,7 @@
 \newcommand{\orb}[2]{\ensuremath{\operatorname{orb}_{#1}(#2)}} % orbit
 \newcommand{\stab}[2]{\ensuremath{\operatorname{stab}_{#1}(#2)}} % stabilizer
 
-\newcommand{\qg}[2]{\ensuremath{\ #1\ / \ #2\ }} % quotient group
+\newcommand{\qg}[2]{\ensuremath{#1\,/\,#2}} % quotient group
 
 \newcommand*{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
 \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
@@ -145,6 +145,9 @@
 %% RINGS
 \renewcommand*{\char}[1]{\ensuremath{\operatorname{char}(#1)}} % characteristic
 \newcommand{\inR}{\ensuremath{\in R}}
+\newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
+
+
 
 % From Math 55 and Math 145 at Harvard
 \newenvironment{subproof}[1][Proof]{%
