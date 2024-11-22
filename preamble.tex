@@ -110,26 +110,13 @@
 }
 
 \definecolor{oran}{HTML}{877AC6}
-\definecolor{redd}{HTML}{ED6A5E}
+\definecolor{redd}{rgb}{0.6,0,0}
 
 % four different colors of boxes
-%\thmboxstyle{defbox}{mdredbox}{red}{orange!5}
-%\thmboxstyle{defbox}{mdredbox}{blue!100!red!60!green!60}{blue!30!red!5!green!1}
-\thmboxstyle{defbox}{mdredbox}{blue!110!red!66!green!66}{blue!5} %cyan definition box
-
-%\thmboxstyle{thmbox}{mdbluebox}{blue!90!red}{cyan!4}
-%\thmboxstyle{thmbox}{mdbluebox}{blue!100!red!100!green!30}{cyan!4!red!1}
-%\thmboxstyle{thmbox}{mdbluebox}{blue!110!red!90!green!45}{blue!12!red!12!green!1} %purple thmbox
-%\thmboxstyle{thmbox}{mdbluebox}{blue!110!red!90!green!45}{purple!6!blue!2} %purple thmbox
-%\thmboxstyle{thmbox}{mdbluebox}{oran}{purple!6!blue!2} %purple thmbox
-\thmboxstyle{thmbox}{mdbluebox}{redd}{blue!30!red!10}
-
-%\thmboxstyle{exbox}{mdgreenbox}{green!70!black}{teal!4}
-\thmboxstyle{exbox}{mdgreenbox}{blue!75!red!80!green!120}{teal!4!blue!2}
-%\definecolor{oran}{RGB}{114,104,166}
-
-%\thmboxstyle{exbox}{mdgreenbox}{blue!85!red!85!green!120}{teal!2!blue!2}
-\thmboxstyle{notebox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5}
+\thmboxstyle{defbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5} % cyan; definition box
+\thmboxstyle{thmbox}{mdredbox}{redd}{blue!30!red!10} % red; theorem box
+\thmboxstyle{exbox}{mdgreenbox}{blue!75!red!80!green!120}{teal!4!blue!2} % green; example box
+\thmboxstyle{notebox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5} % orange; note box
 
 \declaretheorem[style = thmbox, name = Theorem, numberwithin = section]{theorem}
 \declaretheorem[style = thmbox, name = Lemma, numberwithin = section]{lemma}

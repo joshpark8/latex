@@ -27,14 +27,20 @@
 % \newcommand{\pf}[1]{\begin{proof} #1 \end{proof}}
 
 % General
+\let\oldin\in
+\let\oldcdot\cdot
+\renewcommand*{\in}{\ensuremath{\oldin}}
+\renewcommand*{\cdot}{\ensuremath{\oldcdot}}
 \newcommand*{\rtt}{\ensuremath{\sqrt{2}}}
 \newcommand*{\lt}{\left}
 \newcommand*{\rt}{\right}
 \newcommand*{\st}{\ensuremath{\ \vert \ }} % such that (set builder)
-\newcommand*{\tcdot}{\(\cdot\)} % text cdot
 \newcommand*{\imp}{\ensuremath{\implies}}
 \newcommand*{\pmi}{\ensuremath{\impliedby}}
-\newcommand*{\tiff}{\ensuremath{\iff}}
+\renewcommand*{\iff}{\ensuremath{\Longleftrightarrow\ }}
+\newcommand*{\qimp}{\ensuremath{\quad\implies\quad}}
+\newcommand*{\qpmi}{\ensuremath{\quad\impliedby\quad}}
+\newcommand*{\qiff}{\ensuremath{\quad\iff\quad}}
 \newcommand*{\tand}{\text{ and }}
 \newcommand*{\tor}{\text{ or }}
 \newcommand*{\tst}{\text{ such that }}
@@ -42,6 +48,7 @@
 \newcommand*{\veps}{\varepsilon}
 \newcommand*{\sq}{^2}
 \newcommand*{\cb}{^3}
+\newcommand*{\nonzero}[1]{\ensuremath{#1_{\neq 0}}}
 \newcommand*{\sseq}{\ensuremath{\subseteq}}
 
 % Font
@@ -197,8 +204,9 @@
 % \newcommand{\st}{\strut}
 \newcommand{\dps}[1]{\displaystyle{#1}}
 
-\newcommand{\sol}{\setlength{\parindent}{0cm}\textbf{\textit{Solution:}}\setlength{\parindent}{1cm} }
-\newcommand{\solve}[1]{\setlength{\parindent}{0cm}\textbf{\textit{Solution: }}\setlength{\parindent}{1cm}#1 \Qed}
+\newenvironment{solution}
+  {\color{blue}\begin{proof}[Solution]}
+  {\end{proof}\color{black}}
 
 % % From M275 "Topology" at SJSU
 % \DeclareMathOperator{\id}{id}
