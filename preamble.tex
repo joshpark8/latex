@@ -22,6 +22,7 @@
     \rhead{\thepage} %right head is page number
     \lhead{\leftmark} %left head is the section name
 \usepackage{mathtools}
+\usepackage{multicol}
 \usepackage{xparse}
 \usepackage{bbm} %blackboard fonts
 \usepackage{etoolbox}
@@ -72,7 +73,7 @@
 % \DeclareMathOperator{\Ker}{ker}
 % \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\trace}{Tr}
-\newcommand{\bform}{\langle \cdot, \cdot \rangle}
+% \newcommand{\bform}{\langle \cdot, \cdot \rangle}
 \DeclareMathOperator{\lie}{Lie}
 
 
@@ -85,7 +86,7 @@
 
 \usepackage{silence} % for suppressing warnings (thanks, Jason)
 \WarningFilter{mdframed}{You got a bad break}
-\mdfsetup{skipabove=5pt,skipbelow=0pt} %puts space before and after
+\mdfsetup{skipabove=1em,skipbelow=0em} %puts space before and after
 
 \mdfsetup{
 	linewidth = 0.3mm,
@@ -113,15 +114,16 @@
 \definecolor{redd}{rgb}{0.6,0,0}
 
 % four different colors of boxes
-\thmboxstyle{defbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5} % cyan; definition box
+\thmboxstyle{defbox}{mdgreenbox}{green!70!black}{green!10!white} % green; definition box
 \thmboxstyle{thmbox}{mdredbox}{redd}{blue!30!red!10} % red; theorem box
-\thmboxstyle{exbox}{mdgreenbox}{blue!75!red!80!green!120}{teal!4!blue!2} % green; example box
-\thmboxstyle{notebox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5} % orange; note box
+\thmboxstyle{exbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5} % cyan; example box
+\thmboxstyle{ntbox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5} % orange; note box
+\thmboxstyle{exrbox}{mdpurplebox}{pink!70!red}{pink!10!white} % purple; exercise box
 
 \declaretheorem[style = thmbox, name = Theorem, numberwithin = section]{theorem}
 \declaretheorem[style = thmbox, name = Lemma, numberwithin = section]{lemma}
 \declaretheorem[style = thmbox, name = Proposition, numberwithin = section]{proposition}
-\declaretheorem[style = thmbox, name = Corollary, numberwithin = section]{corollary}
+\declaretheorem[style = thmbox, name = Corollary, numberwithin = theorem]{corollary}
 \declaretheorem[style = thmbox, name = Conjecture, numberwithin = section]{conjecture}
 \declaretheorem[style = thmbox, name = Algorithm, numberwithin = section]{algorithm}
 
@@ -143,17 +145,17 @@
 \declaretheorem[style = exbox, name = Examples, numbered = no]{examples}
 \declaretheorem[style = exbox, name = Non-Examples, numbered = no]{nonexamples}
 
-\declaretheorem[style = notebox, name = Remark, numbered = no]{remark}
-\declaretheorem[style = notebox, name = Fact, numbered = no]{fact}
-\declaretheorem[style = notebox, name = Note, numbered = no]{note}
+\declaretheorem[style = ntbox, name = Remark, numbered = no]{remark}
+\declaretheorem[style = ntbox, name = Fact, numbered = no]{fact}
+\declaretheorem[style = ntbox, name = Note, numbered = no]{note}
 
 \declaretheorem[style = plain, name = Question, numbered = no]{ques}
 \declaretheorem[style = plain, name = Answer, numbered = no]{ans}
-\declaretheorem[style = notebox, name = Problem]{problem}
-\declaretheorem[style = notebox, name = Problem, numbered = no]{problem*}
-\declaretheorem[style = notebox, name = Exercise, numbered = no]{exercise}
-\declaretheorem[style = notebox, name = Resources, numbered = no]{resources}
-\declaretheorem[style = notebox, name = Warning, numbered = no]{warning}
+\declaretheorem[style = ntbox, name = Problem]{problem}
+\declaretheorem[style = ntbox, name = Problem, numbered = no]{problem*}
+\declaretheorem[style = ntbox, name = Resources, numbered = no]{resources}
+\declaretheorem[style = ntbox, name = Warning, numbered = no]{warning}
+\declaretheorem[style = exrbox, name = Exercise, numbered = no]{exercise}
 
 % \declaretheorem[style = plain, name = Student Question, numbered = no]{question}
 \declaretheorem[style = plain, name = Question, numbered = no]{question*}
