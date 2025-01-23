@@ -1,41 +1,42 @@
-% preamble.sty
+% preamble.tex
 % \ProvidesPackage{preamble}
 
-% Inspired by http://www.mit.edu/~lindrew/
-
+% http://www.mit.edu/~lindrew/
 
 \usepackage[utf8]{inputenc}
 %% Language and font encodings
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-%% Sets page size and margins
-\usepackage[a4paper,top=3cm,bottom=2cm,left=0.8in,right=0.8in,marginparwidth=1.75cm]{geometry} % jakin
+\usepackage[margin=1in]{geometry}
 
 %% Useful packages
-\usepackage{amsmath, amsthm, amssymb} %standard
-\usepackage{graphicx} %include images/graphics
-\usepackage{dsfont} %includes some symbols?
-\usepackage{systeme} %system of equations
-\usepackage{enumitem} %bullet points
-\usepackage{tikz} %draw diagrams
-\usepackage{fancyhdr} \pagestyle{fancy} %add headers
-    \rhead{\thepage} %right head is page number
-    \lhead{\leftmark} %left head is the section name
-\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amssymb} % standard math packages
+\usepackage{graphicx} % include images/graphics
+% \usepackage{dsfont} % includes some symbols?
+\usepackage{systeme}  % system of equations
+\usepackage{enumitem} % bullet points
+\usepackage{tikz} % draw diagrams
+\usepackage{fancyhdr} \pagestyle{fancy} % add headers
+    \rhead{\thepage} % right head is page number
+    \lhead{\leftmark} % left head is the section name
+% \usepackage{mathtools}
 \usepackage{multicol}
 \usepackage{xparse}
-\usepackage{bbm} %blackboard fonts
+% \usepackage{bbm} %blackboard fonts
 \usepackage{etoolbox}
 \usepackage{xcolor}
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype} \microtypecontext{spacing=nonfrench} %adjusts spacing
+\usepackage{microtype} %\microtypecontext{spacing=nonfrench} %adjusts spacing
 \usepackage{centernot}
 \usepackage{parskip} %skips the paragraph indent?
 \usepackage{stmaryrd} %CS font
 \usepackage{esvect} %lets me use \vv for a vector arrow
 \usepackage[colorlinks=true, allcolors=blue]{hyperref} %makes links blue
 
+\usepackage[numbered,framed]{matlab-prettifier} % cs314
+\usepackage{listings} % cs314
+
 % ethan's packages:
-\usepackage{float}
+% \usepackage{float}
 
 % new commands
 \newcommand{\by}{\hspace{0.05em}{\times}\hspace{0.05em}}
@@ -77,8 +78,8 @@
 \DeclareMathOperator{\lie}{Lie}
 
 
-\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+% \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+% \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \usepackage{thmtools}
 \usepackage[framemethod = TikZ]{mdframed}
@@ -170,5 +171,27 @@
 % Adjusts space before and after subsections
 \usepackage{titlesec}
 \titlespacing*{\subsection}{0pt}{3.5ex plus 1ex minus .2ex}{3.5ex plus .2ex}
+
+% Nested enumerate environment for CS 390ATA
+\newlist{steps}{enumerate}{9}
+\setlist[steps]{before=\upshape\stepsfont,font=\ttfamily} %
+\setlist[steps,1]{leftmargin=*,labelsep=1ex,label={\arabic*.},ref={\arabic*}} %
+\setlist[steps,2]{leftmargin=*,labelsep=1ex,label={\Alph*.},ref={\thestepsi.\Alph*}} %
+\setlist[steps,3]{leftmargin=*,labelsep=1ex,label={\arabic*.},
+  ref={\thestepsii.\arabic*}} %
+\setlist[steps,4]{leftmargin=*,labelsep=1ex,label={\alph*.},
+  ref={\thestepsiii.\alph*}} %
+\setlist[steps,5]{leftmargin=*,labelsep=1ex,label={\arabic*.},
+  ref={\thestepsiv.\arabic*}} %
+\setlist[steps,6]{leftmargin=*,labelsep=1ex,label={\Alph*.},
+  ref={\thestepsv.\Alph*}} %
+\setlist[steps,7]{leftmargin=*,labelsep=1ex,label=\arabic*.,
+  ref={\thestepsvi.\roman*}} %
+\setlist[steps,8]{leftmargin=*,labelsep=1ex,label={\alph*.},
+  ref={\thestepsvii.\alph*}} %
+\setlist[steps,9]{leftmargin=*,labelsep=1ex,label={\arabic*.},
+  ref={\thestepsviii.\arabic*}} %
+\newlist{stepitems}{itemize}{1} % For when I want to put an itemized list inside the code.
+\setlist[stepitems]{before=\upshape\ttfamily,label=*,leftmargin=*,labelsep=1ex}%
 
 % >>------------------------------------------------------------------------------<<
