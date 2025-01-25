@@ -10,53 +10,53 @@
 \usepackage[margin=1in]{geometry}
 
 %% Useful packages
-\usepackage{amsmath, amsthm, amssymb} % standard math packages
+\usepackage{amsmath}  % standard math stuff
+\usepackage{amsthm}   % "
+\usepackage{amssymb}  % "
+\usepackage{amsfonts} % "
 \usepackage{graphicx} % include images/graphics
 % \usepackage{dsfont} % includes some symbols?
 \usepackage{systeme}  % system of equations
 \usepackage{enumitem} % bullet points
-\usepackage{tikz} % draw diagrams
-\usepackage{fancyhdr} \pagestyle{fancy} % add headers
-    \rhead{\thepage} % right head is page number
-    \lhead{\leftmark} % left head is the section name
+\usepackage{tikz}     % draw diagrams
+\usepackage{fancyhdr} % add headers
+  \pagestyle{fancy}   % "
+  \rhead{\thepage}    % right head is page number
+  \lhead{\leftmark}   % left head is the section name
 % \usepackage{mathtools}
 \usepackage{multicol}
 \usepackage{xparse}
 % \usepackage{bbm} %blackboard fonts
 \usepackage{etoolbox}
 \usepackage{xcolor}
-\usepackage{microtype} %\microtypecontext{spacing=nonfrench} %adjusts spacing
+\usepackage{microtype} %adjusts spacing
+% \microtypecontext{spacing=nonfrench}
 \usepackage{centernot}
-\usepackage{parskip} %skips the paragraph indent?
-\usepackage{stmaryrd} %CS font
-\usepackage{esvect} %lets me use \vv for a vector arrow
+% \usepackage{parskip} %skips the paragraph indent?
+% \usepackage{stmaryrd} %CS font
+% \usepackage{esvect} %lets me use \vv for a vector arrow
 \usepackage[colorlinks=true, allcolors=blue]{hyperref} %makes links blue
+
 
 \usepackage[numbered,framed]{matlab-prettifier} % cs314
 \usepackage{listings} % cs314
+
+\usepackage[varqu,varl]{inconsolata} % cs390ATA
 
 % ethan's packages:
 % \usepackage{float}
 
 % new commands
 \newcommand{\by}{\hspace{0.05em}{\times}\hspace{0.05em}}
-\newcommand{\id}{\text{id}}
 
-% Blackboard bold
-\newcommand{\CC}{\mathbb C}
-% \newcommand{\EE}{\mathbb E}
-\newcommand{\FF}{\mathbb F}
-\newcommand{\NN}{\mathbb N}
-\newcommand{\QQ}{\mathbb Q}
-\newcommand{\RR}{\mathbb R}
-% \newcommand{\ZZ}{\mathbb Z}
-\newcommand{\HH}{\mathbb H}
+% suppress error
+\setlength{\headheight}{22.59052pt}
 
 %18.701
 %\newcommand{\ord}{\text{ord}}
 \DeclareMathOperator{\ord}{ord}
 % \newcommand{\im}{\text{im}}
-\DeclareMathOperator{\im}{im}
+% \DeclareMathOperator{\im}{im}
 \newcommand{\nsub}{\trianglelefteq}
 \newcommand{\rto}{\longrightarrow}
 \newcommand{\vvv}{\vv{v}}
@@ -86,7 +86,7 @@
 \usepackage{tikz-cd}
 
 \usepackage{silence} % for suppressing warnings (thanks, Jason)
-\WarningFilter{mdframed}{You got a bad break}
+% \WarningFilter{mdframed}{You got a bad break}
 \mdfsetup{skipabove=1em,skipbelow=0em} %puts space before and after
 
 \mdfsetup{
@@ -115,11 +115,11 @@
 \definecolor{redd}{rgb}{0.6,0,0}
 
 % four different colors of boxes
-\thmboxstyle{defbox}{mdgreenbox}{green!70!black}{green!10!white} % green; definition box
-\thmboxstyle{thmbox}{mdredbox}{redd}{blue!30!red!10} % red; theorem box
-\thmboxstyle{exbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5} % cyan; example box
+\thmboxstyle{defbox}{mdgreenbox}{green!70!black}{green!10!white}    % green; definition box
+\thmboxstyle{thmbox}{mdredbox}{redd}{blue!30!red!10}                % red; theorem box
+\thmboxstyle{exbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5}    % cyan; example box
 \thmboxstyle{ntbox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5} % orange; note box
-\thmboxstyle{exrbox}{mdpurplebox}{pink!70!red}{pink!10!white} % purple; exercise box
+\thmboxstyle{exrbox}{mdpurplebox}{pink!70!red}{pink!10!white}       % purple; exercise box
 
 \declaretheorem[style = thmbox, name = Theorem, numberwithin = section]{theorem}
 \declaretheorem[style = thmbox, name = Lemma, numberwithin = section]{lemma}
@@ -168,13 +168,23 @@
 
 % >>-----------------------------------| park |-----------------------------------<<
 
+% Homework solution environment (red proof)
+\newenvironment{solution}
+  {\color{blue}\begin{proof}[Solution]}
+  {\end{proof}\color{black}}
+
 % Adjusts space before and after subsections
 \usepackage{titlesec}
 \titlespacing*{\subsection}{0pt}{3.5ex plus 1ex minus .2ex}{3.5ex plus .2ex}
 
-% Nested enumerate environment for CS 390ATA
+% CS 390ATA Advanced Topics on Algorithms
+
+%% Custom colors
+\definecolor{commentgreen}{HTML}{119F57}
+
+%% Nested enumerate environment
 \newlist{steps}{enumerate}{9}
-\setlist[steps]{before=\upshape\stepsfont,font=\ttfamily} %
+\setlist[steps]{before=\upshape\normalfont,font=\ttfamily} %
 \setlist[steps,1]{leftmargin=*,labelsep=1ex,label={\arabic*.},ref={\arabic*}} %
 \setlist[steps,2]{leftmargin=*,labelsep=1ex,label={\Alph*.},ref={\thestepsi.\Alph*}} %
 \setlist[steps,3]{leftmargin=*,labelsep=1ex,label={\arabic*.},
@@ -185,7 +195,7 @@
   ref={\thestepsiv.\arabic*}} %
 \setlist[steps,6]{leftmargin=*,labelsep=1ex,label={\Alph*.},
   ref={\thestepsv.\Alph*}} %
-\setlist[steps,7]{leftmargin=*,labelsep=1ex,label=\arabic*.,
+\setlist[steps,7]{leftmargin=*,labelsep=1ex,label={\arabic*.},
   ref={\thestepsvi.\roman*}} %
 \setlist[steps,8]{leftmargin=*,labelsep=1ex,label={\alph*.},
   ref={\thestepsvii.\alph*}} %

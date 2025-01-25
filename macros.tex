@@ -27,122 +27,132 @@
 \newcommand*{\cb}{^3}
 \newcommand*{\nonzero}[1]{\ensuremath{#1_{\neq 0}}}
 \newcommand*{\sseq}{\ensuremath{\subseteq}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}} % reals
+\newcommand{\N}{\ensuremath{\mathbb{N}}} % naturals
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}} % integers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}} % rationals
+\newcommand{\C}{\ensuremath{\mathbb{C}}} % complex
+\newcommand{\M}{\ensuremath{\mathbb{M}}} % matrices
 
-% Font
-\newcommand{\ital}[1]{\emph{#1}} % italics
-\newcommand{\bd}[1]{\textbf{#1}} % bold
-\newcommand{\ul}[1]{\underline{#1}} % underline
+\newcommand{\boolT}{\tbo{True}}  % bool True
+\newcommand{\boolF}{\tbo{False}} % bool False
 
-% Graphics
-\newcommand{\img}[2]{\begin{figure}[H] % insert image file
+%%% Misc. operators
+\DeclareMathOperator{\sign}{sign} % signum function
+\DeclareMathOperator{\Aut}{Aut} % automorphism group
+\DeclareMathOperator{\Inn}{Inn} % inner automorphism group
+\DeclareMathOperator{\Syl}{Syl} % Sylow subgroup
+\DeclareMathOperator{\GL}{GL} % general linear group
+\DeclareMathOperator{\SL}{SL} % special linear group
+
+%%% Font variations
+\newcommand{\nf}[1]{\textnormal{#1}}  % normal
+\newcommand{\tit}[1]{\emph{#1}}       % italics
+\newcommand{\tbo}[1]{\textbf{#1}}     % bold
+\newcommand{\tun}[1]{\underline{#1}}  % underline
+\newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
+
+%%% Add images to document
+\newcommand{\img}[2]{\begin{figure}[H] % parameter 1: image path // parameter 2: height/scale
   \centering%
   \includegraphics[height=#2 \textwidth]{#1}%
   \end{figure}}
 
-% For STAT 350 "Introduction to Statistics"
-\newcommand{\dint}[2]{\int_{#1}^{#2}}
-\newcommand{\Dint}{\int_{-\infty}^{\infty}}
+% SPRING 2025
+% CS 390 ATA Advanced Topics on Algorithms
+\newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
+\newcommand{\doc}[1]{\noindent\tit{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
+\newcommand{\rcomm}[1]{\tit{\color{commentgreen} \hfill \texttt{//} #1 }}
+\newcommand{\lcomm}[1]{\tit{\color{commentgreen} \texttt{//} #1 }}
 
-% MA 375 "Introduction to Discrete Mathematics"
-\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+% MA 454 Galois Theory Honors
+\DeclareMathOperator{\Gal}{Gal} % Galois group
 
-% MA 35301 "Linear Algebra II"
-\newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
-\newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
-
-% MA 341 "Foundations of Analysis"
-\newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
-
-% CS 314 "Numerical Methods"
+% FALL 2024
+%%% CS 314 "Numerical Methods"
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\Exep}{\mathbb{E}}
 \newcommand{\asmp}{\textbf{Assumptions: }}
-\DeclareMathOperator{\var}{\text{Var}}
-% \newcommand{\nd}{\mathcal{N}}
+\DeclareMathOperator{\var}{\text{Var}} % variance
 
-% MA 425 "Elements of Complex Analysis"
-% \newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
-% \newcommand{\re}{\operatorname{Re}}
-% \newcommand{\im}{\operatorname{Im}}
-% \newcommand{\Arg}{\operatorname{Arg}}
-% \newcommand{\wbar}{\overline{w}}
+%%% MA 425 "Elements of Complex Analysis"
+\newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\Arg}{\operatorname{Arg}}
+\newcommand{\wbar}{\overline{w}}
 \renewcommand{\bar}[1]{\overline{#1}}
 
-% MA 450 "Honors Abstract Algebra"
-%% GROUPS
+%%% MA 450 "Honors Abstract Algebra"
 \newcommand*{\divs}{\ensuremath{\,\big\vert\,}} % a divides k <=> a \divs k
 \newcommand*{\ndivs}{\ensuremath{\,\nmid\,}} % a does not divide k <=> a \ndivs k
-% \newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
 \newcommand*{\suth}{\text{such that}}
 \newcommand*{\homo}{\text{homomorphism}}
 \newcommand{\inv}{\ensuremath{^{-1}}}
 \newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
-
 \newcommand*{\sgp}{\ensuremath{\leq}} % subgroup
 \newcommand*{\psgp}{\ensuremath{<}} % proper subgroup
 \newcommand*{\tsgp}{\ensuremath{\{e\}}} % trivial subgroup
 \newcommand{\cyc}[1]{\ensuremath{\langle #1 \rangle}} % cyclic group
 \newcommand*{\nsgp}{\vartriangleleft} % normal subgroup
-
 \newcommand*{\iso}{\cong} % isomorphism
-
 \renewcommand*{\index}[2]{\ensuremath{[ #1 : #2 ]}} % coset index
-
 \newcommand*{\edp}{\oplus} % external direct product
 \newcommand*{\idp}{\times} % internal direct product
-\newcommand*{\kerphi}{\ker\phi} % kernel of the mapping \phi
-
-\newcommand*{\abar}{\ensuremath{\overline{a}}}
-\newcommand*{\ebar}{\ensuremath{\overline{e}}}
-\newcommand*{\xbar}{\ensuremath{\bar{x}}}
-
-\newcommand*{\Gbar}{\ensuremath{\overline{G}}}
-\newcommand*{\Hbar}{\ensuremath{\overline{H}}}
-\newcommand*{\Kbar}{\ensuremath{\overline{K}}}
-
+% \newcommand*{\abar}{\ensuremath{\overline{a}}}
+% \newcommand*{\ebar}{\ensuremath{\overline{e}}}
+% \newcommand*{\xbar}{\ensuremath{\bar{x}}}
+% \newcommand*{\Gbar}{\ensuremath{\overline{G}}}
+% \newcommand*{\Hbar}{\ensuremath{\overline{H}}}
+% \newcommand*{\Kbar}{\ensuremath{\overline{K}}}
 \newcommand*{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
-
 \newcommand{\U}[1]{U(#1)} % group of units modulo n under multiplication
-
-\newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers less than [INPUT] under addition
-\newcommand*{\Zn}{\ensuremath{\Z_n}}    % group of nonnegative integers less than n under addition
-\newcommand*{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers less than 2 under addition
-\newcommand*{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers less than 3 under addition
-\newcommand*{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers less than 4 under addition
-\newcommand*{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers less than 5 under addition
-\newcommand*{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers less than 6 under addition
-\newcommand*{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers less than 7 under addition
-\newcommand*{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers less than 8 under addition
-\newcommand*{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers less than 9 under addition
+\newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers < input under addition
+\newcommand*{\Zn}{\ensuremath{\Z_n}}      % group of nonnegative integers < n under addition
+\newcommand*{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers < 2 under addition
+\newcommand*{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers < 3 under addition
+\newcommand*{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers < 4 under addition
+\newcommand*{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers < 5 under addition
+\newcommand*{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers < 6 under addition
+\newcommand*{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers < 7 under addition
+\newcommand*{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers < 8 under addition
+\newcommand*{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers < 9 under addition
 \newcommand*{\Zte}{\ensuremath{\Z_{10}}}     % group of nonnegative integers less than 9 under addition
-
 \newcommand{\orb}[2]{\ensuremath{\operatorname{orb}_{#1}(#2)}} % orbit
 \newcommand{\stab}[2]{\ensuremath{\operatorname{stab}_{#1}(#2)}} % stabilizer
-
 \newcommand{\qg}[2]{\ensuremath{#1\,/\,#2}} % quotient group
-
 \newcommand*{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
 \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
-
-%% RINGS
 \renewcommand*{\char}[1]{\ensuremath{\operatorname{char}(#1)}} % characteristic
-
 \newcommand{\defmap}[5]{\ensuremath{#1:\begin{matrix}
     #2 \to #3 \\
     #4 \mapsto #5
 \end{matrix}}}
-
 \newcommand*{\srg}{\ensuremath{\leq}} % subring
 \newcommand*{\psrg}{\ensuremath{<}} % proper subring
 \newcommand*{\tsrg}{\ensuremath{\{0\}}} % trivial subring
 \newcommand*{\idl}{\vartriangleleft} % ideal
 \newcommand{\pidl}[1]{\ensuremath{\langle #1 \rangle}} % principal ideal
 \newcommand*{\notidl}{\ntriangleleft} % not ideal
-
 \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
 
-% CS 390 ATA Advanced Topics on Algorithms
-\newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
+% SUMMER 2024
+%%% STAT 350 "Introduction to Statistics"
+\newcommand{\dint}[2]{\int_{#1}^{#2}}
+\newcommand{\Dint}{\int_{-\infty}^{\infty}}
+
+% SPRING 2024
+%%% MA 341 "Foundations of Analysis"
+\newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
+
+%%% MA 35301 "Linear Algebra II"
+\newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
+\newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
+
+% FALL 2023
+%%% MA 375 "Introduction to Discrete Mathematics"
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+
 
 % From Math 55 and Math 145 at Harvard
 \newenvironment{subproof}[1][Proof]{%
@@ -151,7 +161,7 @@
 
 
 \newcommand{\ol}{\overline}
-% \newcommand{\ul}{\underline}
+% \newcommand{\tun}{\underline}
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
 \newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
@@ -191,21 +201,18 @@
 % \newcommand{\st}{\strut}
 % \newcommand{\dps}[1]{\displaystyle{#1}}
 
-\newenvironment{solution}
-  {\color{blue}\begin{proof}[Solution]}
-  {\end{proof}\color{black}}
 
-% % From M275 "Topology" at SJSU
+%%% From M275 "Topology" at SJSU
 % \DeclareMathOperator{\id}{id}
 % \newcommand{\taking}[1]{\xrightarrow{#1}}
 % \newcommand{\inv}{^{-1}}
 
-% % From M170 "Introduction to Graph Theory" at SJSU
+%%% From M170 "Introduction to Graph Theory" at SJSU
 % \DeclareMathOperator{\diam}{diam}
 % \DeclareMathOperator{\ord}{ord}
 % \newcommand{\defeq}{\overset{\mathrm{def}}{=}}
 
-% % From the USAMO .tex files
+%%% From the USAMO .tex files
 % \newcommand{\ts}{\textsuperscript}
 % \newcommand{\dg}{^\circ}
 % \newcommand{\ii}{\item}
