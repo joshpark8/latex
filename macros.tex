@@ -6,12 +6,10 @@
 \renewcommand*{\in}{\ensuremath{\oldin}}
 \renewcommand*{\cdot}{\ensuremath{\oldcdot}}
 \newcommand*{\rtt}{\ensuremath{\sqrt{2}}}
+\newcommand*{\cbrt}[1]{\ensuremath{\sqrt[3]{#1}}}
 \newcommand*{\lt}{\left}
 \newcommand*{\rt}{\right}
-\newcommand*{\st}{\ensuremath{\ \vert \ }} % such that (set builder)
-\newcommand*{\bigst}{\ensuremath{\ \big|\ }} % big such that (set builder)
-\newcommand*{\biggst}{\ensuremath{\ \bigg|\ }} % bigg such that (set builder)
-\newcommand*{\Bigst}{\ensuremath{\ \Big|\ }} % bigg such that (set builder)
+\newcommand*{\st}{\ensuremath{\ \vert \ }} % such that
 \newcommand*{\imp}{\ensuremath{\implies}}
 \newcommand*{\pmi}{\ensuremath{\impliedby}}
 \renewcommand*{\iff}{\ensuremath{\Longleftrightarrow\ }}
@@ -21,29 +19,37 @@
 \newcommand*{\tand}{\text{ and }}
 \newcommand*{\tor}{\text{ or }}
 \newcommand*{\tst}{\text{ such that }}
-\newcommand*{\eps}{\epsilon}
-\newcommand*{\veps}{\varepsilon}
-\newcommand*{\sq}{^2}
-\newcommand*{\cb}{^3}
-\newcommand*{\nonzero}[1]{\ensuremath{#1_{\neq 0}}}
-\newcommand*{\sseq}{\ensuremath{\subseteq}}
-\newcommand{\R}{\ensuremath{\mathbb{R}}} % reals
-\newcommand{\N}{\ensuremath{\mathbb{N}}} % naturals
-\newcommand{\Z}{\ensuremath{\mathbb{Z}}} % integers
-\newcommand{\Q}{\ensuremath{\mathbb{Q}}} % rationals
-\newcommand{\C}{\ensuremath{\mathbb{C}}} % complex
-\newcommand{\M}{\ensuremath{\mathbb{M}}} % matrices
+\newcommand*{\eps}{\epsilon} % epsilon
+\newcommand*{\veps}{\varepsilon} % epsilon variant
+\newcommand*{\vphi}{\varphi} % epsilon variant
+\newcommand*{\sq}{^2} % squared
+\newcommand*{\cb}{^3} % cubed
+\newcommand*{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
+\newcommand*{\sseq}{\ensuremath{\subseteq}} % subset or equal
 
 \newcommand{\boolT}{\tbo{True}}  % bool True
 \newcommand{\boolF}{\tbo{False}} % bool False
 
+%%% Number sets
+\newcommand{\N}{\bbN} % Natural numbers
+\newcommand{\Z}{\bbZ} % Integers
+\newcommand{\Q}{\bbQ} % Rational numbers
+\newcommand{\R}{\bbR} % Real numbers
+\newcommand{\C}{\bbC} % Complex numbers
+\newcommand{\F}{\bbF} % Finite fields
+\newcommand{\K}{\bbK} % General field
+
+
 %%% Misc. operators
 \DeclareMathOperator{\sign}{sign} % signum function
-\DeclareMathOperator{\Aut}{Aut} % automorphism group
-\DeclareMathOperator{\Inn}{Inn} % inner automorphism group
-\DeclareMathOperator{\Syl}{Syl} % Sylow subgroup
-\DeclareMathOperator{\GL}{GL} % general linear group
-\DeclareMathOperator{\SL}{SL} % special linear group
+\DeclareMathOperator{\Aut}{Aut}   % automorphism group
+\DeclareMathOperator{\Inn}{Inn}   % inner automorphism group
+\DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
+
+\DeclareMathOperator{\stab}{stab}   % stabilizer
+\DeclareMathOperator{\orb}{orb} % orbit
+\DeclareMathOperator{\perm}{Perm}   % permutation
+\DeclareMathOperator{\proj}{proj}   % projection
 
 %%% Font variations
 \newcommand{\nf}[1]{\textnormal{#1}}  % normal
@@ -53,20 +59,39 @@
 \newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
 
 %%% Add images to document
-\newcommand{\img}[2]{\begin{figure}[H] % parameter 1: image path // parameter 2: height/scale
+\newcommand{\img}[2]{\begin{figure}[H] % arg 1: image path, arg 2: width/scale
   \centering%
-  \includegraphics[height=#2 \textwidth]{#1}%
-  \end{figure}}
+  \includegraphics[width=#2 \textwidth]{#1}%
+  \end{figure}
+}
 
 % SPRING 2025
-% CS 390 ATA Advanced Topics on Algorithms
+% CS 390 ATA "Advanced Topics on Algorithms"
 \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
+\newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
 \newcommand{\doc}[1]{\noindent\tit{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
+\newcommand{\defalgo}[2]{\noindent\tun{\tmo{#1(\ensuremath{#2}):}}}
 \newcommand{\rcomm}[1]{\tit{\color{commentgreen} \hfill \texttt{//} #1 }}
 \newcommand{\lcomm}[1]{\tit{\color{commentgreen} \texttt{//} #1 }}
+\newcommand{\subcall}[2]{\tmo{\tun{#1(\ensuremath{#2})}}}
 
-% MA 454 Galois Theory Honors
+% MA 454 "Galois Theory Honors"
 \DeclareMathOperator{\Gal}{Gal} % Galois group
+\newcommand{\FF}[1]{\ensuremath{\bbF_{#1}}}      % finite field of n elements
+\newcommand*{\Ftw}{\ensuremath{\bbF_2}}     % finite field of 2 elements
+\newcommand*{\Fth}{\ensuremath{\bbF_3}}     % finite field of 3 elements
+\newcommand*{\Ffo}{\ensuremath{\bbF_4}}     % finite field of 4 elements
+\newcommand*{\Ffi}{\ensuremath{\bbF_5}}     % finite field of 5 elements
+\newcommand*{\Fsi}{\ensuremath{\bbF_6}}     % finite field of 6 elements
+\newcommand*{\Fse}{\ensuremath{\bbF_7}}     % finite field of 7 elements
+\newcommand*{\Fei}{\ensuremath{\bbF_8}}     % finite field of 8 elements
+\newcommand*{\Fni}{\ensuremath{\bbF_9}}     % finite field of 9 elements
+\newcommand*{\Fte}{\ensuremath{\bbF_{10}}}  % finite field of 10 elements
+\newcommand*{\sfe}{splitting field extension\ }
+\newcommand*{\ac}{algebraic closure\ }
+\renewcommand*{\sf}{splitting field\ }
+\newcommand*{\fdeg}[2]{\ensuremath{[ #1 : #2 ]}} % degree of field extension
+\renewcommand*{\ss}{\ensuremath{\subset}} % subset
 
 % FALL 2024
 %%% CS 314 "Numerical Methods"
@@ -84,10 +109,10 @@
 \renewcommand{\bar}[1]{\overline{#1}}
 
 %%% MA 450 "Honors Abstract Algebra"
-\newcommand*{\divs}{\ensuremath{\,\big\vert\,}} % a divides k <=> a \divs k
+\newcommand{\divs}{\ensuremath{\,\big\vert\,}} % a divides k <=> a \divs k
 \newcommand*{\ndivs}{\ensuremath{\,\nmid\,}} % a does not divide k <=> a \ndivs k
-\newcommand*{\suth}{\text{such that}}
-\newcommand*{\homo}{\text{homomorphism}}
+\newcommand*{\suth}{\text{such that\ }}
+\newcommand*{\homo}{\text{homomorphism\ }}
 \newcommand{\inv}{\ensuremath{^{-1}}}
 \newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
 \newcommand*{\sgp}{\ensuremath{\leq}} % subgroup
@@ -99,40 +124,40 @@
 \renewcommand*{\index}[2]{\ensuremath{[ #1 : #2 ]}} % coset index
 \newcommand*{\edp}{\oplus} % external direct product
 \newcommand*{\idp}{\times} % internal direct product
-% \newcommand*{\abar}{\ensuremath{\overline{a}}}
-% \newcommand*{\ebar}{\ensuremath{\overline{e}}}
-% \newcommand*{\xbar}{\ensuremath{\bar{x}}}
-% \newcommand*{\Gbar}{\ensuremath{\overline{G}}}
-% \newcommand*{\Hbar}{\ensuremath{\overline{H}}}
-% \newcommand*{\Kbar}{\ensuremath{\overline{K}}}
+\newcommand*{\abar}{\ensuremath{\overline{a}}}
+\newcommand*{\ebar}{\ensuremath{\overline{e}}}
+\newcommand*{\xbar}{\ensuremath{\bar{x}}}
+\newcommand*{\Gbar}{\ensuremath{\overline{G}}}
+\newcommand*{\Hbar}{\ensuremath{\overline{H}}}
+\newcommand*{\Kbar}{\ensuremath{\overline{K}}}
 \newcommand*{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
 \newcommand{\U}[1]{U(#1)} % group of units modulo n under multiplication
-\newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers < input under addition
-\newcommand*{\Zn}{\ensuremath{\Z_n}}      % group of nonnegative integers < n under addition
-\newcommand*{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers < 2 under addition
-\newcommand*{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers < 3 under addition
-\newcommand*{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers < 4 under addition
-\newcommand*{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers < 5 under addition
-\newcommand*{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers < 6 under addition
-\newcommand*{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers < 7 under addition
-\newcommand*{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers < 8 under addition
-\newcommand*{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers < 9 under addition
-\newcommand*{\Zte}{\ensuremath{\Z_{10}}}     % group of nonnegative integers less than 9 under addition
-\newcommand{\orb}[2]{\ensuremath{\operatorname{orb}_{#1}(#2)}} % orbit
-\newcommand{\stab}[2]{\ensuremath{\operatorname{stab}_{#1}(#2)}} % stabilizer
+\newcommand{\ZZ}[1]{\ensuremath{\bbZ_{#1}}} % group of nonnegative integers < input under addition
+\newcommand*{\Zn}{\ensuremath{\bbZ_n}}      % group of nonnegative integers < n under addition
+\newcommand*{\Ztw}{\ensuremath{\bbZ_2}}     % group of nonnegative integers < 2 under addition
+\newcommand*{\Zth}{\ensuremath{\bbZ_3}}     % group of nonnegative integers < 3 under addition
+\newcommand*{\Zfo}{\ensuremath{\bbZ_4}}     % group of nonnegative integers < 4 under addition
+\newcommand*{\Zfi}{\ensuremath{\bbZ_5}}     % group of nonnegative integers < 5 under addition
+\newcommand*{\Zsi}{\ensuremath{\bbZ_6}}     % group of nonnegative integers < 6 under addition
+\newcommand*{\Zse}{\ensuremath{\bbZ_7}}     % group of nonnegative integers < 7 under addition
+\newcommand*{\Zei}{\ensuremath{\bbZ_8}}     % group of nonnegative integers < 8 under addition
+\newcommand*{\Zni}{\ensuremath{\bbZ_9}}     % group of nonnegative integers < 9 under addition
+\newcommand*{\Zte}{\ensuremath{\bbZ_{10}}}     % group of nonnegative integers less than 9 under addition
+% \newcommand{\orb}[2]{\ensuremath{\operatorname{orb}_{#1}(#2)}} % orbit
+% \newcommand{\stab}[2]{\ensuremath{\operatorname{stab}_{#1}(#2)}} % stabilizer
 \newcommand{\qg}[2]{\ensuremath{#1\,/\,#2}} % quotient group
-\newcommand*{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
-\newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
+% \newcommand*{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
+% \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
 \renewcommand*{\char}[1]{\ensuremath{\operatorname{char}(#1)}} % characteristic
-\newcommand{\defmap}[5]{\ensuremath{#1:\begin{matrix}
-    #2 \to #3 \\
-    #4 \mapsto #5
-\end{matrix}}}
+% \newcommand{\defmap}[5]{\ensuremath{#1:\begin{matrix}
+%     #2 \to #3 \\
+%     #4 \mapsto #5
+% \end{matrix}}}
 \newcommand*{\srg}{\ensuremath{\leq}} % subring
 \newcommand*{\psrg}{\ensuremath{<}} % proper subring
 \newcommand*{\tsrg}{\ensuremath{\{0\}}} % trivial subring
-\newcommand*{\idl}{\vartriangleleft} % ideal
-\newcommand{\pidl}[1]{\ensuremath{\langle #1 \rangle}} % principal ideal
+\newcommand*{\id}{\vartriangleleft} % ideal
+\newcommand{\pid}[1]{\ensuremath{\langle #1 \rangle}} % principal ideal
 \newcommand*{\notidl}{\ntriangleleft} % not ideal
 \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
 
@@ -148,6 +173,7 @@
 %%% MA 35301 "Linear Algebra II"
 \newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
 \newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
+\newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
 % FALL 2023
 %%% MA 375 "Introduction to Discrete Mathematics"
@@ -164,7 +190,7 @@
 % \newcommand{\tun}{\underline}
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
-\newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
+% \newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
 % \newcommand{\exercise}[1]{\textbf{\color{red} #1}}
 \providecommand{\half}{\frac{1}{2}}
 % \newcommand{\dang}{\measuredangle} %% Directed angle

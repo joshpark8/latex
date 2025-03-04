@@ -3,90 +3,71 @@
 
 % http://www.mit.edu/~lindrew/
 
-\usepackage[utf8]{inputenc}
-%% Language and font encodings
-\usepackage[english]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[margin=1in]{geometry}
+% >>==========|| Document setup ||==========<<
+\usepackage[utf8]{inputenc}         % UTF-8 encoding
+\usepackage[T1]{fontenc}            % Improved font encoding
+\usepackage[english]{babel}         % Language settings
+\usepackage[margin=1in]{geometry}   % Page layout with 1-inch margins
 
-%% Useful packages
-\usepackage{amsmath}  % standard math stuff
-\usepackage{amsthm}   % "
-\usepackage{amssymb}  % "
-\usepackage{amsfonts} % "
-\usepackage{graphicx} % include images/graphics
-% \usepackage{dsfont} % includes some symbols?
-\usepackage{systeme}  % system of equations
-\usepackage{enumitem} % bullet points
-\usepackage{tikz}     % draw diagrams
-\usepackage{fancyhdr} % add headers
-  \pagestyle{fancy}   % "
-  \rhead{\thepage}    % right head is page number
-  \lhead{\leftmark}   % left head is the section name
-% \usepackage{mathtools}
-\usepackage{multicol}
-\usepackage{xparse}
-% \usepackage{bbm} %blackboard fonts
-\usepackage{etoolbox}
-\usepackage{xcolor}
-\usepackage{microtype} %adjusts spacing
-% \microtypecontext{spacing=nonfrench}
-\usepackage{centernot}
-% \usepackage{parskip} %skips the paragraph indent?
-% \usepackage{stmaryrd} %CS font
-% \usepackage{esvect} %lets me use \vv for a vector arrow
-\usepackage[colorlinks=true, allcolors=blue]{hyperref} %makes links blue
+\usepackage{fancyhdr}   % Custom headers/footers
+\pagestyle{fancy}       % Enable fancy headers
+\lhead{\leftmark}       % Left header: section name
+\rhead{\thepage}        % Right header: page number
+\setlength{\headheight}{25pt}
+% \addtolength{\topmargin}{-10.50113pt}
 
+\usepackage{enumitem}   % Better control of lists (e.g., itemize, enumerate)
+\usepackage{parskip}    % Remove paragraph indents and add spacing between paragraphs
+\usepackage{mdframed}   % Create custom framed environments
+\usepackage{microtype}  % Adjusts spacing for better readability
 
-\usepackage[numbered,framed]{matlab-prettifier} % cs314
-\usepackage{listings} % cs314
+% >>==========|| Math packages ||==========<<
+\usepackage{amsmath}     % Advanced math environments (align, gather, etc.)
+\usepackage{amsthm}      % Theorem-like environments
+\usepackage{amssymb}     % Additional math symbols (\mathbb, arrows, etc.)
+\usepackage{amsfonts}    % Blackboard bold and Fraktur fonts
+\usepackage{thmtools}    % Enhanced theorem customization
+\makeatletter
+\renewcommand\thempfootnote{\arabic{mpfootnote}}
+\makeatother
+\usepackage{systeme}     % Simplifies writing systems of equations
+% \usepackage{mathtools} % Extends amsmath with extra features
+% \usepackage{stmaryrd}  % Specialized symbols for CS
 
-\usepackage[varqu,varl]{inconsolata} % cs390ATA
+% >>==========|| Graphics and diagrams ||==========<<
+\usepackage{graphicx}   % Include images with \includegraphics
+\usepackage{tikz}       % Create diagrams, plots, and drawings
+\usepackage{tikz-cd}    % Specialized diagrams (e.g., commutative diagrams)
+\usepackage{float}
 
-% ethan's packages:
-% \usepackage{float}
+% >>==========|| Fonts and text ||==========<<
+\usepackage[varqu,varl]{inconsolata} % Monospaced font for code (CS 390ATA)
+\usepackage{xcolor}                  % Add colors for text and links
+\usepackage{hyperref}                % Create hyperlinks
+\hypersetup{colorlinks=true, allcolors=blue} % Links in blue
 
-% new commands
-\newcommand{\by}{\hspace{0.05em}{\times}\hspace{0.05em}}
+% >>==========|| Code listings and syntax ||==========<<
+\usepackage[numbered,framed]{matlab-prettifier} % MATLAB code formatting
+\usepackage{listings}                           % Code listings (general-purpose)
+% \usepackage{fancyvrb}                           % robust verbatim
 
-% suppress error
-\setlength{\headheight}{22.59052pt}
+% >>==========|| Miscellaneous packages ||==========<<
+\usepackage{silence}  % Suppress specific warnings
+\WarningFilter{mdframed}{You got a bad break}
 
-%18.701
-%\newcommand{\ord}{\text{ord}}
-\DeclareMathOperator{\ord}{ord}
-% \newcommand{\im}{\text{im}}
-% \DeclareMathOperator{\im}{im}
-\newcommand{\nsub}{\trianglelefteq}
-\newcommand{\rto}{\longrightarrow}
-\newcommand{\vvv}{\vv{v}}
-\newcommand{\mto}{\longmapsto}
-\newcommand{\spann}{\text{Span}}
-\newcommand{\matnn}{\text{Mat}_{n \by n}}
+% >>==========|| Commented-out or optional packages ||==========<<
+% These are disabled by default but can be enabled as needed.
+% \usepackage{multicol}      % Multiple columns in a document
+% \usepackage{xparse}        % Create custom commands
+% \usepackage{centernot}     % Centered negation for arrows (\centernot\rightarrow)
+% \usepackage{bbm}           % Alternative blackboard bold (\mathbbm)
+% \usepackage{esvect}        % Vector arrows (\vv)
+% \usepackage{etoolbox}      % Advanced LaTeX macros and tools
 
-% \newcommand{\stab}{\text{Stab}}
-% \newcommand{\orbit}{\text{Orbit}}
-% \newcommand{\perm}{\text{Perm}}
-% \DeclareMathOperator{\stab}{Stab}
-\DeclareMathOperator{\orbit}{Orbit}
-\DeclareMathOperator{\perm}{Perm}
-\DeclareMathOperator{\proj}{proj}
-% \DeclareMathOperator{\Ker}{ker}
-% \DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\trace}{Tr}
-% \newcommand{\bform}{\langle \cdot, \cdot \rangle}
-\DeclareMathOperator{\lie}{Lie}
+% \setlength{\parskip}{1em}
 
+% >>==========|| Additional options ||==========<<
 
-% \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-% \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
-
-\usepackage{thmtools}
-\usepackage[framemethod = TikZ]{mdframed}
-\usepackage{tikz-cd}
-
-\usepackage{silence} % for suppressing warnings (thanks, Jason)
-% \WarningFilter{mdframed}{You got a bad break}
 \mdfsetup{skipabove=1em,skipbelow=0em} %puts space before and after
 
 \mdfsetup{
@@ -111,10 +92,21 @@
 	]{#1}
 }
 
+% >>==========|| Nested itemize ||==========<<
+
+\setlistdepth{10}  % Increase itemize nesting depth
+
+\setlist[itemize,1]{label=•}
+\setlist[itemize,2]{label=-}
+\setlist[itemize,3]{label=\raisebox{-.5ex}{*}}
+\setlist[itemize,4]{label=•}
+\setlist[itemize,5]{label=-}
+
+% >>==========|| Theorem boxes ||==========<<
+
 \definecolor{oran}{HTML}{877AC6}
 \definecolor{redd}{rgb}{0.6,0,0}
 
-% four different colors of boxes
 \thmboxstyle{defbox}{mdgreenbox}{green!70!black}{green!10!white}    % green; definition box
 \thmboxstyle{thmbox}{mdredbox}{redd}{blue!30!red!10}                % red; theorem box
 \thmboxstyle{exbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5}    % cyan; example box
@@ -152,11 +144,13 @@
 
 \declaretheorem[style = plain, name = Question, numbered = no]{ques}
 \declaretheorem[style = plain, name = Answer, numbered = no]{ans}
-\declaretheorem[style = ntbox, name = Problem]{problem}
+\declaretheorem[style = ntbox, name = Problem, numberwithin = section]{problem}
 \declaretheorem[style = ntbox, name = Problem, numbered = no]{problem*}
 \declaretheorem[style = ntbox, name = Resources, numbered = no]{resources}
 \declaretheorem[style = ntbox, name = Warning, numbered = no]{warning}
-\declaretheorem[style = exrbox, name = Exercise, numbered = no]{exercise}
+\declaretheorem[style = exrbox, name = Exercise, numberwithin = section]{exercise}
+\declaretheorem[style = exrbox, name = Exercise, numberwithin = exercise]{subexercise}
+\declaretheorem[style = exrbox, name = Prompt, numberwithin = section]{prompt}
 
 % \declaretheorem[style = plain, name = Student Question, numbered = no]{question}
 \declaretheorem[style = plain, name = Question, numbered = no]{question*}
@@ -166,23 +160,22 @@
 
 \def\todo#1{\relax}
 
-% >>-----------------------------------| park |-----------------------------------<<
 
-% Homework solution environment (red proof)
+% Homework solution environment
 \newenvironment{solution}
-  {\color{blue}\begin{proof}[Solution]}
+  {\color{black}\begin{proof}[Solution]}
   {\end{proof}\color{black}}
 
 % Adjusts space before and after subsections
 \usepackage{titlesec}
 \titlespacing*{\subsection}{0pt}{3.5ex plus 1ex minus .2ex}{3.5ex plus .2ex}
 
-% CS 390ATA Advanced Topics on Algorithms
 
-%% Custom colors
+% >>==========|| CS 390ATA Advanced Topics on Algorithms ||==========<<
+% Custom colors
 \definecolor{commentgreen}{HTML}{119F57}
 
-%% Nested enumerate environment
+% Nested enumerate environment
 \newlist{steps}{enumerate}{9}
 \setlist[steps]{before=\upshape\normalfont,font=\ttfamily} %
 \setlist[steps,1]{leftmargin=*,labelsep=1ex,label={\arabic*.},ref={\arabic*}} %
@@ -203,5 +196,3 @@
   ref={\thestepsviii.\arabic*}} %
 \newlist{stepitems}{itemize}{1} % For when I want to put an itemized list inside the code.
 \setlist[stepitems]{before=\upshape\ttfamily,label=*,leftmargin=*,labelsep=1ex}%
-
-% >>------------------------------------------------------------------------------<<
