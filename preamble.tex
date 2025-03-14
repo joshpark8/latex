@@ -45,6 +45,7 @@
 \usepackage{xcolor}                  % Add colors for text and links
 \usepackage{hyperref}                % Create hyperlinks
 \hypersetup{colorlinks=true, allcolors=blue} % Links in blue
+\usepackage{skull}
 
 % >>==========|| Code listings and syntax ||==========<<
 \usepackage[numbered,framed]{matlab-prettifier} % MATLAB code formatting
@@ -53,7 +54,7 @@
 
 % >>==========|| Miscellaneous packages ||==========<<
 \usepackage{silence}  % Suppress specific warnings
-\WarningFilter{mdframed}{You got a bad break}
+% \WarningFilter{mdframed}{You got a bad break}
 
 % >>==========|| Commented-out or optional packages ||==========<<
 % These are disabled by default but can be enabled as needed.
@@ -161,16 +162,9 @@
 
 \def\todo#1{\relax}
 
-
-% Homework solution environment
-\newenvironment{solution}
-  {\color{black}\begin{proof}[Solution]}
-  {\end{proof}\color{black}}
-
 % Adjusts space before and after subsections
 \usepackage{titlesec}
 \titlespacing*{\subsection}{0pt}{3.5ex plus 1ex minus .2ex}{3.5ex plus .2ex}
-
 
 % >>==========|| CS 390ATA Advanced Topics on Algorithms ||==========<<
 % Custom colors
