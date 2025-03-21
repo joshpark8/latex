@@ -95,7 +95,7 @@
 
 % MA 454 "Galois Theory Honors"
 \DeclareMathOperator{\Gal}{Gal} % Galois group
-\newcommand{\FF}[1]{\ensuremath{\F_{#1}}}      % finite field of n elements
+\newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of n elements
 \newcommand*{\Ftw}{\ensuremath{\F_2}}     % finite field of 2 elements
 \newcommand*{\Fth}{\ensuremath{\F_3}}     % finite field of 3 elements
 \newcommand*{\Ffo}{\ensuremath{\F_4}}     % finite field of 4 elements
@@ -105,11 +105,17 @@
 \newcommand*{\Fei}{\ensuremath{\F_8}}     % finite field of 8 elements
 \newcommand*{\Fni}{\ensuremath{\F_9}}     % finite field of 9 elements
 \newcommand*{\Fte}{\ensuremath{\F_{10}}}  % finite field of 10 elements
-\newcommand*{\sfe}{splitting field extension\ }
-\newcommand*{\ac}{algebraic closure\ }
-\renewcommand*{\sf}{splitting field\ }
+\newcommand*{\sfe}{splitting field extension}
+\renewcommand*{\sf}{splitting field}
 \newcommand*{\fdeg}[2]{\ensuremath{[ #1 : #2 ]}} % degree of field extension
 \renewcommand*{\ss}{\ensuremath{\subset}} % subset
+\newcommand*{\Lbar}{\ensuremath{\overline{L}}}
+\newcommand*{\Mbar}{\ensuremath{\overline{M}}}
+\newcommand{\Fix}[1]{\ensuremath{\operatorname{Fix}(#1)}} % Fixed field
+\newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
+\newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
+\newcommand*{\Fp}{\ensuremath{\F_p}}  % finite field of p elements
+\newcommand*{\Fq}{\ensuremath{\F_q}}  % finite field of q elements
 
 % FALL 2024
 %%% CS 314 "Numerical Methods"
@@ -130,14 +136,15 @@
 \newcommand{\divs}{\ensuremath{\,\big\vert\,}} % a divides k <=> a \divs k
 \newcommand*{\ndivs}{\ensuremath{\,\nmid\,}} % a does not divide k <=> a \ndivs k
 \newcommand*{\suth}{\text{such that\ }}
-\newcommand*{\homo}{\text{homomorphism\ }}
+\newcommand*{\homo}{\text{homomorphism}}
 \newcommand{\inv}{\ensuremath{^{-1}}}
 \newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
 \newcommand*{\sgp}{\ensuremath{\leq}} % subgroup
 \newcommand*{\psgp}{\ensuremath{<}} % proper subgroup
 \newcommand*{\tsgp}{\ensuremath{\{e\}}} % trivial subgroup
 \newcommand{\cyc}[1]{\ensuremath{\langle #1 \rangle}} % cyclic group
-\newcommand*{\nsgp}{\vartriangleleft} % normal subgroup
+\newcommand*{\nsgp}{\trianglelefteq} % normal subgroup
+\newcommand*{\pnsgp}{\triangleleft} % proper normal subgroup
 \newcommand*{\iso}{\cong} % isomorphism
 \renewcommand*{\index}[2]{\ensuremath{[ #1 : #2 ]}} % coset index
 \newcommand*{\edp}{\oplus} % external direct product
@@ -163,7 +170,7 @@
 \newcommand*{\Zte}{\ensuremath{\Z_{10}}}     % group of nonnegative integers less than 9 under addition
 % \newcommand{\orb}[2]{\ensuremath{\operatorname{orb}_{#1}(#2)}} % orbit
 % \newcommand{\stab}[2]{\ensuremath{\operatorname{stab}_{#1}(#2)}} % stabilizer
-\newcommand{\qg}[2]{\ensuremath{#1\,/\,#2}} % quotient group
+\newcommand{\qg}[2]{\ensuremath{#1/#2}} % quotient group
 % \newcommand*{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
 % \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
 \renewcommand*{\char}[1]{\ensuremath{\operatorname{char}(#1)}} % characteristic
@@ -174,8 +181,9 @@
 \newcommand*{\srg}{\ensuremath{\leq}} % subring
 \newcommand*{\psrg}{\ensuremath{<}} % proper subring
 \newcommand*{\tsrg}{\ensuremath{\{0\}}} % trivial subring
-\newcommand*{\id}{\vartriangleleft} % ideal
-\newcommand{\pid}[1]{\ensuremath{\langle #1 \rangle}} % principal ideal
+\newcommand*{\idl}{\trianglelefteq} % ideal
+\newcommand*{\pidl}{\triangleleft} % ideal
+% \newcommand{\pid}[1]{\ensuremath{\langle #1 \rangle}} % principal ideal
 \newcommand*{\notidl}{\ntriangleleft} % not ideal
 \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
 
