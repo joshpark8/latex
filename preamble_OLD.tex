@@ -26,7 +26,7 @@
     {}%         % Theorem head font (bold for the title "Definition")
     {.}%                % Punctuation after theorem head
     {8pt}%               % Space after theorem head
-    {\tun{\textbf{#1\IfNoValueT{#2}{\ #2}}\IfNoValueT{#3}{ (#3)}}}%                % Theorem head spec
+    {\uline{\textbf{#1\IfNoValueT{#2}{\ #2}}\IfNoValueT{#3}{ (#3)}}}%                % Theorem head spec
 
 \theoremstyle{mystyle}
 
@@ -48,7 +48,7 @@
 \NewDocumentEnvironment{ntheorem}{O{Theorem} o o} % O for optional label, o for optional title, o for optional number
 {
     \vspace{0pt} % Space above to match mystyle
-    \noindent\tun{\textbf{#1}%
+    \noindent\uline{\textbf{#1}%
     \IfNoValueF{#2}{\ \textbf{#2}}%
     \IfNoValueF{#3}{ (#3)}%
     \textbf{.}} % Punctuation and space after heading

@@ -46,6 +46,9 @@
 \usepackage{hyperref}                % Create hyperlinks
 \hypersetup{colorlinks=true, allcolors=blue} % Links in blue
 \usepackage{skull}
+\usepackage{color}
+\usepackage{soul}
+\usepackage[normalem]{ulem}
 
 % >>==========|| Code listings and syntax ||==========<<
 \usepackage[numbered,framed]{matlab-prettifier} % MATLAB code formatting
@@ -105,11 +108,11 @@
 
 % >>==========|| Theorem environments ||==========<<
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{definition}{Definition}
+\newtheorem{ttheorem}{Theorem}[section]
+\newtheorem{tlemma}[ttheorem]{Lemma}
+\newtheorem{tcorollary}[ttheorem]{Corollary}
+\newtheorem{tproposition}[ttheorem]{Proposition}
+\newtheorem{tdefinition}{Definition}
 % \newtheorem{cor}{Corollary}[section]
 
 \definecolor{oran}{HTML}{877AC6}
@@ -121,45 +124,37 @@
 \thmboxstyle{ntbox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5} % orange; note box
 \thmboxstyle{exrbox}{mdpurplebox}{pink!70!red}{pink!10!white}       % purple; exercise box
 
-\declaretheorem[style = thmbox, name = Theorem,     numberwithin = section]{btheorem}
-\declaretheorem[style = thmbox, name = Lemma,       numberwithin = section]{blemma}
-\declaretheorem[style = thmbox, name = Proposition, numberwithin = section]{bproposition}
-\declaretheorem[style = thmbox, name = Corollary,   numberwithin = btheorem]{bcorollary}
-\declaretheorem[style = thmbox, name = Conjecture,  numberwithin = section]{bconjecture}
-\declaretheorem[style = thmbox, name = Algorithm,   numberwithin = section]{balgorithm}
+\declaretheorem[style = thmbox, name = Theorem,     numberwithin = section]{theorem}
+\declaretheorem[style = thmbox, name = Lemma,       numberwithin = section]{lemma}
+\declaretheorem[style = thmbox, name = Proposition, numberwithin = section]{proposition}
+\declaretheorem[style = thmbox, name = Corollary,   numberwithin = theorem]{corollary}
 
-\declaretheorem[style = thmbox, name = Theorem,     numbered = no]{btheorem*}
-\declaretheorem[style = thmbox, name = Lemma,       numbered = no]{blemma*}
-\declaretheorem[style = thmbox, name = Proposition, numbered = no]{bproposition*}
-\declaretheorem[style = thmbox, name = Corollary,   numbered = no]{bcorollary*}
-\declaretheorem[style = thmbox, name = Conjecture,  numbered = no]{bconjecture*}
-\declaretheorem[style = thmbox, name = Algorithm,   numbered = no]{balgorithm*}
+\declaretheorem[style = thmbox, name = Theorem,     numbered = no]{theorem*}
+\declaretheorem[style = thmbox, name = Lemma,       numbered = no]{lemma*}
+\declaretheorem[style = thmbox, name = Proposition, numbered = no]{proposition*}
+\declaretheorem[style = thmbox, name = Corollary,   numbered = no]{corollary*}
 
-\declaretheorem[style = defbox, name = Definition,  numberwithin = section]{bdefinition}
-\declaretheorem[style = defbox, name = Definition,  numbered = no]{bdefinition*}
+\declaretheorem[style = defbox, name = Definition,  numberwithin = section]{definition}
+\declaretheorem[style = defbox, name = Definition,  numbered = no]{definition*}
 
-\declaretheorem[style = exbox, name = Example,      numberwithin = section]{bexample}
-\declaretheorem[style = exbox, name = Example,      numbered = no]{bexample*}
-\declaretheorem[style = exbox, name = Non-Example,  numberwithin = section]{bnonexample}
-\declaretheorem[style = exbox, name = Non-Example,  numbered = no]{bnonexample*}
+\declaretheorem[style = exbox, name = Example,      numberwithin = section]{example}
+\declaretheorem[style = exbox, name = Example,      numbered = no]{example*}
+\declaretheorem[style = exbox, name = Non-Example,  numberwithin = section]{nonexample}
+\declaretheorem[style = exbox, name = Non-Example,  numbered = no]{nonexample*}
 
-\declaretheorem[style = exbox, name = Examples,     numbered = no]{bexamples}
-\declaretheorem[style = exbox, name = Non-Examples, numbered = no]{bnonexamples}
+\declaretheorem[style = exbox, name = Examples,     numbered = no]{examples}
+\declaretheorem[style = exbox, name = Non-Examples, numbered = no]{nonexamples}
 
-\declaretheorem[style = ntbox, name = Remark,       numbered = no]{bremark}
-\declaretheorem[style = ntbox, name = Fact,         numbered = no]{bfact}
-\declaretheorem[style = ntbox, name = Note,         numbered = no]{bnote}
-\declaretheorem[style = ntbox, name = Notation,     numbered = no]{bnotation}
+\declaretheorem[style = ntbox, name = Remark,       numbered = no]{remark}
+\declaretheorem[style = ntbox, name = Fact,         numbered = no]{fact}
+\declaretheorem[style = ntbox, name = Note,         numbered = no]{note}
+\declaretheorem[style = ntbox, name = Notation,     numbered = no]{notation}
 
-\declaretheorem[style = plain, name = Question,     numbered = no]{bques}
-\declaretheorem[style = plain, name = Answer,       numbered = no]{bans}
-\declaretheorem[style = exrbox, name = Exercise,    numberwithin = section]{bexercise}
-\declaretheorem[style = exrbox, name = Exercise,    numberwithin = bexercise]{bsubexercise}
-\declaretheorem[style = exrbox, name = Prompt,      numberwithin = section]{bprompt}
-\declaretheorem[style = ntbox, name = Problem,      numberwithin = section]{bproblem}
-\declaretheorem[style = ntbox, name = Problem,      numbered = no]{bproblem*}
-\declaretheorem[style = ntbox, name = Resources,    numbered = no]{bresources}
-\declaretheorem[style = ntbox, name = Warning,      numbered = no]{bwarning}
+\declaretheorem[style = plain, name = Question,     numbered = no]{ques}
+\declaretheorem[style = plain, name = Answer,       numbered = no]{ans}
+\declaretheorem[style = exrbox, name = Exercise,    numberwithin = section]{exercise}
+\declaretheorem[style = exrbox, name = Exercise,    numberwithin = exercise]{subexercise}
+\declaretheorem[style = exrbox, name = Prompt,      numberwithin = section]{prompt}
 
 \declaretheorem[style = plain, name = Claim]{claim}
 \declaretheorem[style = plain, name = Claim, numbered = no]{claim*}

@@ -9,10 +9,9 @@
 \newcommand*{\cbrt}[1]{\ensuremath{\sqrt[3]{#1}}}
 \newcommand*{\lt}{\left}
 \newcommand*{\rt}{\right}
-\newcommand*{\st}{\ensuremath{\ \vert \ }} % such that
 \newcommand*{\imp}{\ensuremath{\implies}}
 \newcommand*{\pmi}{\ensuremath{\impliedby}}
-\renewcommand*{\iff}{\ensuremath{\Longleftrightarrow\ }}
+\renewcommand*{\iff}{\ensuremath{\Longleftrightarrow}\ }
 \newcommand*{\qimp}{\ensuremath{\quad\implies\quad}}
 \newcommand*{\qpmi}{\ensuremath{\quad\impliedby\quad}}
 \newcommand*{\qiff}{\ensuremath{\quad\iff\quad}}
@@ -59,7 +58,7 @@
 \newcommand{\nf}[1]{\textnormal{#1}}  % normal
 \newcommand{\tit}[1]{\emph{#1}}       % italics
 \newcommand{\tbo}[1]{\textbf{#1}}     % bold
-\newcommand{\tun}[1]{\underline{#1}}  % underline
+\newcommand{\tul}[1]{\uline{#1}}  % underline
 \newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
 
 %%% Add images to document
@@ -85,16 +84,17 @@
 \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
 \newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
 \newcommand{\doc}[1]{\noindent\tit{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
-\newcommand{\defalgo}[2]{\noindent\tun{\tmo{#1(\ensuremath{#2}):}}}
+\newcommand{\defalgo}[2]{\noindent\uline{\tmo{#1(\ensuremath{#2}):}}}
 \newcommand{\rcomm}[1]{\tit{\color{commentgreen} \hfill \texttt{//} #1 }}
 \newcommand{\lcomm}[1]{\tit{\color{commentgreen} \texttt{//} #1 }}
-\newcommand{\subcall}[2]{\tmo{\tun{#1(\ensuremath{#2})}}}
+\newcommand{\subcall}[2]{\tmo{\uline{#1(\ensuremath{#2})}}}
 \newcommand*{\Abar}{\ensuremath{\overline{A}}}
 \newcommand*{\Bbar}{\ensuremath{\overline{B}}}
 
 
 % MA 454 "Galois Theory Honors"
 \DeclareMathOperator{\Gal}{Gal} % Galois group
+\newcommand*{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
 \newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of n elements
 \newcommand*{\Ftw}{\ensuremath{\F_2}}     % finite field of 2 elements
 \newcommand*{\Fth}{\ensuremath{\F_3}}     % finite field of 3 elements
