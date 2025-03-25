@@ -5,31 +5,37 @@
 \let\oldcdot\cdot
 \renewcommand*{\in}{\ensuremath{\oldin}}
 \renewcommand*{\cdot}{\ensuremath{\oldcdot}}
+
 \newcommand*{\rtt}{\ensuremath{\sqrt{2}}}
 \newcommand*{\cbrt}[1]{\ensuremath{\sqrt[3]{#1}}}
+
 \newcommand*{\lt}{\left}
 \newcommand*{\rt}{\right}
+
 \newcommand*{\imp}{\ensuremath{\implies}}
 \newcommand*{\pmi}{\ensuremath{\impliedby}}
 \renewcommand*{\iff}{\ensuremath{\Longleftrightarrow}\ }
 \newcommand*{\qimp}{\ensuremath{\quad\implies\quad}}
 \newcommand*{\qpmi}{\ensuremath{\quad\impliedby\quad}}
 \newcommand*{\qiff}{\ensuremath{\quad\iff\quad}}
+
 \newcommand*{\tand}{\text{ and }}
 \newcommand*{\tor}{\text{ or }}
 \newcommand*{\tst}{\text{ such that }}
+
 \newcommand*{\eps}{\epsilon} % epsilon
 \newcommand*{\veps}{\varepsilon} % epsilon variant
 \newcommand*{\vphi}{\varphi} % epsilon variant
+
 \newcommand*{\sq}{^2} % squared
 \newcommand*{\cb}{^3} % cubed
+
 \newcommand*{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
 \newcommand*{\sseq}{\ensuremath{\subseteq}} % subset or equal
 
-\newcommand{\boolT}{\tbo{True}}  % bool True
-\newcommand{\boolF}{\tbo{False}} % bool False
+\newcommand{\boolT}{\bd{True}}  % bool True
+\newcommand{\boolF}{\bd{False}} % bool False
 
-%%% Number sets
 \newcommand{\N}{\bbN} % Natural numbers
 \newcommand{\Z}{\bbZ} % Integers
 \newcommand{\Q}{\bbQ} % Rational numbers
@@ -38,62 +44,69 @@
 \newcommand{\F}{\bbF} % Finite field
 \newcommand{\K}{\bbK} % General field
 
+\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\ol}{\overline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\providecommand{\half}{\frac{1}{2}}
 
-%%% General operators
-\DeclareMathOperator{\sign}{sign} % signum function
-% \DeclareMathOperator{\card}{card}   % cardinality
+% Operators
+\DeclareMathOperator{\sign}{sign} % signum
+\DeclareMathOperator{\card}{card} % cardinality
 
-%%% Group Theory operators
+%% Group Theory
 \DeclareMathOperator{\Aut}{Aut}   % automorphism group
 \DeclareMathOperator{\Inn}{Inn}   % inner automorphism group
 \DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
 \DeclareMathOperator{\stab}{stab} % stabilizer
 \DeclareMathOperator{\orb}{orb}   % orbit
 \DeclareMathOperator{\perm}{Perm} % permutation
+\DeclareMathOperator{\Gal}{Gal} % Galois group
 
-%%% Linear Algebra operators
+%% Linear Algebra
 \DeclareMathOperator{\proj}{proj}   % projection
 
-%%% Font variations
+% Font variations
 \newcommand{\nf}[1]{\textnormal{#1}}  % normal
-\newcommand{\tit}[1]{\emph{#1}}       % italics
-\newcommand{\tbo}[1]{\textbf{#1}}     % bold
-\newcommand{\tul}[1]{\uline{#1}}  % underline
+\renewcommand{\it}[1]{\emph{#1}}      % italics
+\newcommand{\bd}[1]{\textbf{#1}}      % bold
+\renewcommand{\ul}[1]{\uline{#1}}     % underline
 \newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
 
-%%% Add images to document
+% Add images to document
 \newcommand{\img}[2]{\begin{figure}[H] % arg 1: image path, arg 2: width/scale
   \centering%
   \includegraphics[width=#2 \textwidth]{#1}%
   \end{figure}
 }
 
-%%% Homework solution environment
+% Homework solution environment
 \newenvironment{solution}%
   {\begin{proof}[Solution]}%
   {\end{proof}}
 
-%%% Subproof
+% Subproof
 \newenvironment{subproof}[1][Proof]{%
   \begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
   {\end{proof}}
 
 
-% SPRING 2025
-% CS 390 ATA "Advanced Topics on Algorithms"
+% Course specific
+
+%% SPRING 2025
+%%% CS 390 ATA "Advanced Topics on Algorithms"
 \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
 \newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
-\newcommand{\doc}[1]{\noindent\tit{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
+\newcommand{\doc}[1]{\noindent\it{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
 \newcommand{\defalgo}[2]{\noindent\uline{\tmo{#1(\ensuremath{#2}):}}}
-\newcommand{\rcomm}[1]{\tit{\color{commentgreen} \hfill \texttt{//} #1 }}
-\newcommand{\lcomm}[1]{\tit{\color{commentgreen} \texttt{//} #1 }}
+\newcommand{\rcomm}[1]{\it{\color{commentgreen} \hfill \texttt{//} #1 }}
+\newcommand{\lcomm}[1]{\it{\color{commentgreen} \texttt{//} #1 }}
 \newcommand{\subcall}[2]{\tmo{\uline{#1(\ensuremath{#2})}}}
 \newcommand*{\Abar}{\ensuremath{\overline{A}}}
 \newcommand*{\Bbar}{\ensuremath{\overline{B}}}
 
 
-% MA 454 "Galois Theory Honors"
-\DeclareMathOperator{\Gal}{Gal} % Galois group
+%%% MA 454 "Galois Theory Honors"
 \newcommand*{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
 \newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of n elements
 \newcommand*{\Ftw}{\ensuremath{\F_2}}     % finite field of 2 elements
@@ -117,7 +130,7 @@
 \newcommand*{\Fp}{\ensuremath{\F_p}}  % finite field of p elements
 \newcommand*{\Fq}{\ensuremath{\F_q}}  % finite field of q elements
 
-% FALL 2024
+%% FALL 2024
 %%% CS 314 "Numerical Methods"
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\Exep}{\mathbb{E}}
@@ -130,7 +143,6 @@
 \newcommand{\im}{\operatorname{Im}}
 \newcommand{\Arg}{\operatorname{Arg}}
 \newcommand{\wbar}{\overline{w}}
-\renewcommand{\bar}[1]{\overline{#1}}
 
 %%% MA 450 "Honors Abstract Algebra"
 \newcommand{\divs}{\ensuremath{\,\big\vert\,}} % a divides k <=> a \divs k
@@ -187,12 +199,12 @@
 \newcommand*{\notidl}{\ntriangleleft} % not ideal
 \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
 
-% SUMMER 2024
+%% SUMMER 2024
 %%% STAT 350 "Introduction to Statistics"
 \newcommand{\dint}[2]{\int_{#1}^{#2}}
 \newcommand{\Dint}{\int_{-\infty}^{\infty}}
 
-% SPRING 2024
+%% SPRING 2024
 %%% MA 341 "Foundations of Analysis"
 \newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
 
@@ -201,13 +213,6 @@
 \newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
 \newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
-% FALL 2023
+%% FALL 2023
 %%% MA 375 "Introduction to Discrete Mathematics"
 \newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
-
-
-
-\newcommand{\ol}{\overline}
-\newcommand{\wt}{\widetilde}
-\newcommand{\wh}{\widehat}
-\providecommand{\half}{\frac{1}{2}}

@@ -107,14 +107,16 @@
 \setlist[itemize,5]{label=-}
 
 % >>==========|| Theorem environments ||==========<<
-
+% Text environment
 \newtheorem{ttheorem}{Theorem}[section]
 \newtheorem{tlemma}[ttheorem]{Lemma}
 \newtheorem{tcorollary}[ttheorem]{Corollary}
 \newtheorem{tproposition}[ttheorem]{Proposition}
-\newtheorem{tdefinition}{Definition}
-% \newtheorem{cor}{Corollary}[section]
 
+\theoremstyle{definition}
+\newtheorem{tdefinition}{Definition}
+
+% Boxed environment
 \definecolor{oran}{HTML}{877AC6}
 \definecolor{redd}{rgb}{0.6,0,0}
 
