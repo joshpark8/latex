@@ -14,7 +14,8 @@
 
 \newcommand*{\imp}{\ensuremath{\implies}}
 \newcommand*{\pmi}{\ensuremath{\impliedby}}
-\renewcommand*{\iff}{\ensuremath{\Longleftrightarrow}\ }
+\renewcommand*{\iff}{\ensuremath{\Longleftrightarrow}}
+
 \newcommand*{\qimp}{\ensuremath{\quad\implies\quad}}
 \newcommand*{\qpmi}{\ensuremath{\quad\impliedby\quad}}
 \newcommand*{\qiff}{\ensuremath{\quad\iff\quad}}
@@ -22,6 +23,13 @@
 \newcommand*{\tand}{\text{ and }}
 \newcommand*{\tor}{\text{ or }}
 \newcommand*{\tst}{\text{ such that }}
+
+\newcommand*{\qand}{\ensuremath{\quad\text{and}\quad}}
+\newcommand*{\qor}{\ensuremath{\quad\text{or}\quad}}
+\newcommand*{\qst}{\ensuremath{\quad\text{such that}\quad}}
+
+\newcommand*{\lprod}{\mathop{\prod}\limits}
+\newcommand*{\lsum}{\mathop{\sum}\limits}
 
 \newcommand*{\eps}{\epsilon} % epsilon
 \newcommand*{\veps}{\varepsilon} % epsilon variant
@@ -41,14 +49,18 @@
 \newcommand{\Q}{\bbQ} % Rational numbers
 \newcommand{\R}{\bbR} % Real numbers
 \newcommand{\C}{\bbC} % Complex numbers
+
 \newcommand{\F}{\bbF} % Finite field
 \newcommand{\K}{\bbK} % General field
 
 \renewcommand{\bar}[1]{\overline{#1}}
 \newcommand{\ol}{\overline}
+\newcommand{\oll}[1]{\overline{\overline{#1}}}
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
 \providecommand{\half}{\frac{1}{2}}
+
+\newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
 % Operators
 \DeclareMathOperator{\sign}{sign} % signum
@@ -65,6 +77,7 @@
 
 %% Linear Algebra
 \DeclareMathOperator{\proj}{proj}   % projection
+\DeclareMathOperator{\Span}{span}   % span
 
 % Font variations
 \newcommand{\nf}[1]{\textnormal{#1}}  % normal
@@ -211,7 +224,6 @@
 %%% MA 35301 "Linear Algebra II"
 \newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
 \newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
-\newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
 %% FALL 2023
 %%% MA 375 "Introduction to Discrete Mathematics"

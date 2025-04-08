@@ -32,11 +32,13 @@
 \makeatother
 \usepackage{systeme}     % Simplifies writing systems of equations
 \usepackage{mathtools}   % Extends amsmath with extra features
+\usepackage{mathdots}
 % \usepackage{stmaryrd}  % Specialized symbols for CS
 
 % >>==========|| Graphics and diagrams ||==========<<
 \usepackage{graphicx}   % Include images with \includegraphics
 \usepackage{tikz}       % Create diagrams, plots, and drawings
+\usetikzlibrary{positioning}
 \usepackage{tikz-cd}    % Specialized diagrams (e.g., commutative diagrams)
 \usepackage{float}
 
@@ -109,7 +111,7 @@
 % >>==========|| Theorem environments ||==========<<
 % Text environment
 \newtheorem{ttheorem}{Theorem}[section]
-\newtheorem{tlemma}{Lemma}
+\newtheorem{tlemma}[ttheorem]{Lemma}
 \newtheorem{tcorollary}{Corollary}
 \newtheorem{tproposition}{Proposition}
 
