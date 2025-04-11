@@ -40,7 +40,7 @@
 \newcommand{\cb}{^3} % cubed
 
 \newcommand{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
-\newcommand{\subeq}{\ensuremath{\subseteq}} % subset or equal
+\newcommand{\sseq}{\ensuremath{\subseteq}} % subset or equal
 \newcommand{\supeq}{\ensuremath{\subseteq}} % superset or equal
 
 \newcommand{\boolT}{\bd{\tmo{True}}}  % bool True
@@ -55,24 +55,27 @@
 \newcommand{\F}{\bbF} % Finite field
 \newcommand{\K}{\bbK} % General field
 
-\renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\re}{\operatorname{Re}} % Real part
+\newcommand{\im}{\operatorname{Im}} % Imaginary part
+\newcommand{\Arg}{\operatorname{Arg}} % Argument
+
 \newcommand{\ol}{\overline}
-\newcommand{\oll}[1]{\overline{\overline{#1}}}
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
+\renewcommand{\bar}[1]{\ol{#1}}
 
-\newcommand{\Abar}{\ensuremath{\overline{A}}}
-\newcommand{\Bbar}{\ensuremath{\overline{B}}} % cdef
-\newcommand{\Gbar}{\ensuremath{\overline{G}}}
-\newcommand{\Hbar}{\ensuremath{\overline{H}}} % ij
-\newcommand{\Kbar}{\ensuremath{\overline{K}}}
-\newcommand{\Lbar}{\ensuremath{\overline{L}}}
-\newcommand{\Mbar}{\ensuremath{\overline{M}}} % nopqrstuvwxyz
+\newcommand{\Abar}{\ensuremath{\bar{A}}}
+\newcommand{\Bbar}{\ensuremath{\bar{B}}} % cdef
+\newcommand{\Gbar}{\ensuremath{\bar{G}}}
+\newcommand{\Hbar}{\ensuremath{\bar{H}}} % ij
+\newcommand{\Kbar}{\ensuremath{\bar{K}}}
+\newcommand{\Lbar}{\ensuremath{\bar{L}}}
+\newcommand{\Mbar}{\ensuremath{\bar{M}}} % nopqrstuvwxyz
 
-\newcommand{\abar}{\ensuremath{\overline{a}}} % bcd
-\newcommand{\ebar}{\ensuremath{\overline{e}}} % fghijklmnopqrstuv
-\newcommand{\wbar}{\ensuremath{\overline{w}}}
-\newcommand{\xbar}{\ensuremath{\overline{x}}} % yz
+\newcommand{\abar}{\ensuremath{\bar{a}}} % bcd
+\newcommand{\ebar}{\ensuremath{\bar{e}}} % fghijklmnopqrstuv
+\newcommand{\wbar}{\ensuremath{\bar{w}}}
+\newcommand{\xbar}{\ensuremath{\bar{x}}} % yz
 
 \newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers mod input under addition
 \newcommand{\Zn}{\ensuremath{\Z_n}}      % group of nonnegative integers mod n under addition
@@ -108,23 +111,27 @@
 %% Abstract Algebra
 \DeclareMathOperator{\orb}{orb}   % orbit
 \DeclareMathOperator{\stab}{stab} % stabilizer
-\DeclareMathOperator{\chr}{char} % characteristic
+\DeclareMathOperator{\chr}{char}  % characteristic
 \DeclareMathOperator{\perm}{Perm} % permutation
 \DeclareMathOperator{\Aut}{Aut}   % automorphism group
 \DeclareMathOperator{\Inn}{Inn}   % inner automorphism group
 \DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
-\DeclareMathOperator{\Gal}{Gal} % Galois group
+\DeclareMathOperator{\Gal}{Gal}   % Galois group
 
 %% Linear Algebra
 \DeclareMathOperator{\proj}{proj}   % projection
 \DeclareMathOperator{\Span}{span}   % span
 
+%% Statistics
+\DeclareMathOperator{\var}{\text{Var}} % variance
+
+
 % Font variations
 \newcommand{\nf}[1]{\textnormal{#1}}  % normal
-\renewcommand{\it}[1]{\emph{#1}}      % italics
 \newcommand{\bd}[1]{\textbf{#1}}      % bold
-\renewcommand{\ul}[1]{\uline{#1}}     % underline
 \newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
+\renewcommand{\it}[1]{\emph{#1}}      % italics
+\renewcommand{\ul}[1]{\uline{#1}}     % underline
 
 
 % Add images to document
@@ -166,21 +173,16 @@
 \newcommand{\Fix}[2]{\ensuremath{\operatorname{Fix}_{#1}(#2)}} % Fixed field
 \newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
 \newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
-\newcommand{\Fp}{\ensuremath{\F_p}}  % finite field of p elements
-\newcommand{\Fq}{\ensuremath{\F_q}}  % finite field of q elements
+\newcommand{\fp}{\ensuremath{\F_p}}  % finite field of p elements
+\newcommand{\fq}{\ensuremath{\F_q}}  % finite field of q elements
 
 %% FALL 2024
 %%% CS 314 "Numerical Methods"
-\newcommand{\Prob}{\mathbb{P}}
-\newcommand{\Exep}{\mathbb{E}}
-\newcommand{\asmp}{\textbf{Assumptions: }}
-\DeclareMathOperator{\var}{\text{Var}} % variance
+% \newcommand{\Prob}{\mathbb{P}}
+% \newcommand{\Exep}{\mathbb{E}}
 
 %%% MA 425 "Elements of Complex Analysis"
 \newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
-\newcommand{\re}{\operatorname{Re}}
-\newcommand{\im}{\operatorname{Im}}
-\newcommand{\Arg}{\operatorname{Arg}}
 
 %%% MA 450 "Honors Abstract Algebra"
 %%%% Shortcuts
@@ -191,6 +193,7 @@
 \newcommand{\edp}{\oplus}      % external direct product
 \newcommand{\idp}{\times}      % internal direct product
 \newcommand{\U}[1]{\nf{U}(#1)} % group of units modulo n under multiplication
+
 \newcommand{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
 
 \newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
@@ -203,20 +206,22 @@
 \newcommand{\psgp}{\ensuremath{\mathrel{<}}}        % proper subgroup
 \newcommand{\ogp}{\ensuremath{\mathrel{\geqslant}}} % overgroup
 \newcommand{\nsgp}{\ensuremath{\mathrel{\unlhd}}}   % normal subgroup
+\newcommand{\nogp}{\ensuremath{\mathrel{\unrhd}}}   % normal overgroup
 \newcommand{\pnsgp}{\ensuremath{\mathrel{\lhd}}}    % proper normal subgroup
+\newcommand{\pnogp}{\ensuremath{\mathrel{\rhd}}}    % proper normal overgroup
 
 \newcommand{\qg}[2]{\ensuremath{#1/#2}} % quotient group
 \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
-\newcommand{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugate
+\newcommand{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugation
 
 \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
-\newcommand{\srg}{\ensuremath{\leq}} % subring
-\newcommand{\psrg}{\ensuremath{<}} % proper subring
-\newcommand{\tsrg}{\ensuremath{\{0\}}} % trivial subring
-\newcommand{\idl}{\trianglelefteq} % ideal
-\newcommand{\pidl}{\triangleleft} % ideal
-% \newcommand{\pid}[1]{\ensuremath{\langle #1 \rangle}} % principal ideal
-\newcommand{\notidl}{\ntriangleleft} % not ideal
+\newcommand{\srg}{\ensuremath{\mathrel{\leqslant}}} % subring
+\newcommand{\psrg}{\ensuremath{\mathrel{<}}}        % proper subring
+% \newcommand{\tsrg}{\ensuremath{\{0\}}}              % trivial subring
+\newcommand{\idl}{\ensuremath{\mathrel{\unlhd}}}    % ideal
+\newcommand{\pidl}{\ensuremath{\mathrel{\lhd}}}     % proper ideal
+\newcommand{\pid}[1]{\ensuremath{( #1 )}}           % principal ideal
+\newcommand{\notidl}{\ntriangleleft}                % not ideal
 
 %% SUMMER 2024
 %%% STAT 350 "Introduction to Statistics"
