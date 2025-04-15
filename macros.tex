@@ -8,7 +8,9 @@
 \renewcommand{\cdot}{\ensuremath{\oldcdot}}
 
 \newcommand{\rtt}{\ensuremath{\sqrt{2}}}
-\newcommand{\cbrt}[1]{\ensuremath{\sqrt[3]{#1}}}
+\newcommand{\thrt}{\ensuremath{\sqrt[3]}}
+\newcommand{\fort}{\ensuremath{\sqrt[4]}}
+\newcommand{\infrt}{\ensuremath{\sqrt[\infty]}}
 
 \newcommand{\lt}{\left}
 \newcommand{\rt}{\right}
@@ -41,7 +43,7 @@
 
 \newcommand{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
 \newcommand{\sseq}{\ensuremath{\subseteq}} % subset or equal
-\newcommand{\supeq}{\ensuremath{\subseteq}} % superset or equal
+\newcommand{\supeq}{\ensuremath{\supseteq}} % superset or equal
 
 \newcommand{\boolT}{\bd{\tmo{True}}}  % bool True
 \newcommand{\boolF}{\bd{\tmo{False}}} % bool False
@@ -168,6 +170,7 @@
 \newcommand{\Fix}[2]{\ensuremath{\operatorname{Fix}_{#1}(#2)}} % Fixed field
 \newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
 \newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
+\newcommand{\id}{\nf{Id.}} % Identity element
 
 %% FALL 2024
 %%% CS 314 "Numerical Methods"
@@ -181,10 +184,10 @@
 \newcommand{\Arg}{\operatorname{Arg}} % Argument
 
 %%% MA 450 "Honors Abstract Algebra"
-%%%% Shortcuts
+
 \newcommand{\homo}{\text{homomorphism}} % hom
 \newcommand{\inv}{\ensuremath{^{-1}}}   % inverse element
-\newcommand{\tsgp}{\nf{\{\nf{id.}\}}}   % trivial subgroup
+\newcommand{\tgp}{\nf{\{\id\}}}   % trivial subgroup
 \newcommand{\iso}{\cong}       % isomorphism
 \newcommand{\edp}{\oplus}      % external direct product
 \newcommand{\idp}{\times}      % internal direct product
@@ -198,9 +201,10 @@
 
 \newcommand{\divs}{\ensuremath{\mathrel{\vert}}}    % a divides k
 \newcommand{\ndivs}{\ensuremath{\mathrel{\nmid}}}   % a does not divide k
+
 \newcommand{\sgp}{\ensuremath{\mathrel{\leqslant}}} % subgroup
-\newcommand{\psgp}{\ensuremath{\mathrel{<}}}        % proper subgroup
 \newcommand{\ogp}{\ensuremath{\mathrel{\geqslant}}} % overgroup
+\newcommand{\psgp}{\ensuremath{\mathrel{<}}}        % proper subgroup
 \newcommand{\nsgp}{\ensuremath{\mathrel{\unlhd}}}   % normal subgroup
 \newcommand{\nogp}{\ensuremath{\mathrel{\unrhd}}}   % normal overgroup
 \newcommand{\pnsgp}{\ensuremath{\mathrel{\lhd}}}    % proper normal subgroup
