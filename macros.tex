@@ -45,14 +45,15 @@
 \newcommand{\sseq}{\ensuremath{\subseteq}} % subset or equal
 \newcommand{\supeq}{\ensuremath{\supseteq}} % superset or equal
 
-\newcommand{\boolT}{\bd{\tmo{True}}}  % bool True
-\newcommand{\boolF}{\bd{\tmo{False}}} % bool False
+\newcommand{\boolT}{\tmo{true}}  % boolean true
+\newcommand{\boolF}{\tmo{false}} % boolean false
 
 \newcommand{\N}{\bbN} % Natural numbers
 \newcommand{\Z}{\bbZ} % Integers
 \newcommand{\Q}{\bbQ} % Rational numbers
 \newcommand{\R}{\bbR} % Real numbers
 \newcommand{\C}{\bbC} % Complex numbers
+
 
 \newcommand{\F}{\bbF} % Finite field
 \newcommand{\K}{\bbK} % General field
@@ -106,7 +107,7 @@
 \DeclareMathOperator{\sign}{sign} % signum
 \DeclareMathOperator{\card}{card} % cardinality
 
-%% Abstract Algebra
+% Abstract Algebra
 \DeclareMathOperator{\orb}{orb}   % orbit
 \DeclareMathOperator{\stab}{stab} % stabilizer
 \DeclareMathOperator{\chr}{char}  % characteristic
@@ -116,11 +117,11 @@
 \DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
 \DeclareMathOperator{\Gal}{Gal}   % Galois group
 
-%% Linear Algebra
+% Linear Algebra
 \DeclareMathOperator{\proj}{proj}   % projection
 \DeclareMathOperator{\Span}{span}   % span
 
-%% Statistics
+% Statistics
 \DeclareMathOperator{\var}{\text{Var}} % variance
 
 
@@ -136,105 +137,105 @@
 \newcommand{\img}[2]{\begin{figure}[H] % arg 1: image path, arg 2: width/scale
   \centering%
   \includegraphics[width=#2 \textwidth]{#1}%
-  \end{figure}
+\end{figure}
 }
 
 % Homework solution environment
 \newenvironment{solution}%
-  {\begin{proof}[Solution]}%
+{\begin{proof}[Solution]}%
   {\end{proof}}
 
-% Subproof
-\newenvironment{subproof}[1][Proof]{%
+  % Subproof
+  \newenvironment{subproof}[1][Proof]{%
   \begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
-  {\end{proof}}
+    {\end{proof}}
 
 
 % Course specific
 
-%% SPRING 2025
-%%% CS 390 ATA "Advanced Topics on Algorithms"
-\newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
-\newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
-\newcommand{\doc}[1]{\noindent\it{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
-\newcommand{\defalgo}[2]{\noindent\uline{\tmo{#1(\ensuremath{#2}):}}}
-\newcommand{\rcomm}[1]{\it{\color{commentgreen} \hfill \texttt{//} #1 }}
-\newcommand{\lcomm}[1]{\it{\color{commentgreen} \texttt{//} #1 }}
-\newcommand{\subcall}[2]{\tmo{\uline{#1(\ensuremath{#2})}}}
+% SPRING 2025
+  % CS 390 ATA "Advanced Topics on Algorithms"
+  \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
+  \newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
+  \newcommand{\doc}[1]{\noindent\it{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
+  \newcommand{\defalgo}[2]{\noindent\uline{\tmo{#1(\ensuremath{#2}):}}}
+  \newcommand{\rcomm}[1]{\it{\color{commentgreen} \hfill \texttt{//} #1 }}
+  \newcommand{\lcomm}[1]{\it{\color{commentgreen} \texttt{//} #1 }}
+  \newcommand{\subcall}[2]{\tmo{\uline{#1(\ensuremath{#2})}}}
 
-%%% MA 454 "Galois Theory Honors"
-\newcommand{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
-\newcommand{\sfe}{splitting field extension}
-\renewcommand{\sf}{splitting field}
-\newcommand{\fdeg}[2]{\ensuremath{[ #1 : #2 ]}} % degree of field extension
-\newcommand{\Fix}[2]{\ensuremath{\operatorname{Fix}_{#1}(#2)}} % Fixed field
-\newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
-\newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
-\newcommand{\id}{\nf{Id.}} % Identity element
+  % MA 454 "Galois Theory Honors"
+  \newcommand{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
+  \newcommand{\sfe}{splitting field extension}
+  \renewcommand{\sf}{splitting field}
+  \newcommand{\fdeg}[2]{\ensuremath{[ #1 : #2 ]}} % degree of field extension
+  \newcommand{\Fix}[2]{\ensuremath{\operatorname{Fix}_{#1}(#2)}} % Fixed field
+  \newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
+  \newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
+  \newcommand{\id}{\nf{Id.}} % Identity element
 
-%% FALL 2024
-%%% CS 314 "Numerical Methods"
-\newcommand{\Prob}{\mathbb{P}} % Probability
-\newcommand{\Exep}{\mathbb{E}} % Expected value
+% FALL 2024
+  % CS 314 "Numerical Methods"
+  \newcommand{\Prob}{\bbP} % Probability
+  \newcommand{\Exep}{\bbE} % Expected value
 
-%%% MA 425 "Elements of Complex Analysis"
-\newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
-\newcommand{\re}{\operatorname{Re}} % Real part
-\newcommand{\im}{\operatorname{Im}} % Imaginary part
-\newcommand{\Arg}{\operatorname{Arg}} % Argument
+  % MA 425 "Elements of Complex Analysis"
+  \newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
+  \newcommand{\re}{\operatorname{Re}} % Real part
+  \newcommand{\im}{\operatorname{Im}} % Imaginary part
+  \newcommand{\Arg}{\operatorname{Arg}} % Argument
 
-%%% MA 450 "Honors Abstract Algebra"
+  % MA 450 "Honors Abstract Algebra"
 
-\newcommand{\homo}{\text{homomorphism}} % hom
-\newcommand{\inv}{\ensuremath{^{-1}}}   % inverse element
-\newcommand{\tgp}{\nf{\{\id\}}}   % trivial subgroup
-\newcommand{\iso}{\cong}       % isomorphism
-\newcommand{\edp}{\oplus}      % external direct product
-\newcommand{\idp}{\times}      % internal direct product
-\newcommand{\U}[1]{\nf{U}(#1)} % group of units modulo n under multiplication
+  \newcommand{\homo}{\text{homomorphism}} % hom
+  \newcommand{\inv}{\ensuremath{^{-1}}}   % inverse element
+  \newcommand{\tgp}{\nf{\{\id\}}}   % trivial subgroup
+  \newcommand{\iso}{\cong}       % isomorphism
+  \newcommand{\edp}{\oplus}      % external direct product
+  \newcommand{\idp}{\times}      % internal direct product
+  \newcommand{\U}[1]{\nf{U}(#1)} % group of units modulo n under multiplication
 
-\newcommand{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
+  \newcommand{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
 
-\newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
-\newcommand{\cyc}[1]{\ensuremath{\langle #1 \rangle}}     % cyclic group
-\renewcommand{\index}[2]{\ensuremath{[ #1 : #2 ]}}        % coset index
+  \newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
+  \newcommand{\cyc}[1]{\ensuremath{\langle #1 \rangle}}     % cyclic group
+  \renewcommand{\index}[2]{\ensuremath{[ #1 : #2 ]}}        % coset index
 
-\newcommand{\divs}{\ensuremath{\mathrel{\vert}}}    % a divides k
-\newcommand{\ndivs}{\ensuremath{\mathrel{\nmid}}}   % a does not divide k
+  \newcommand{\divs}{\ensuremath{\mathrel{\vert}}}    % a divides k
+  \newcommand{\ndivs}{\ensuremath{\mathrel{\nmid}}}   % a does not divide k
 
-\newcommand{\sgp}{\ensuremath{\mathrel{\leqslant}}} % subgroup
-\newcommand{\ogp}{\ensuremath{\mathrel{\geqslant}}} % overgroup
-\newcommand{\psgp}{\ensuremath{\mathrel{<}}}        % proper subgroup
-\newcommand{\nsgp}{\ensuremath{\mathrel{\unlhd}}}   % normal subgroup
-\newcommand{\nogp}{\ensuremath{\mathrel{\unrhd}}}   % normal overgroup
-\newcommand{\pnsgp}{\ensuremath{\mathrel{\lhd}}}    % proper normal subgroup
-\newcommand{\pnogp}{\ensuremath{\mathrel{\rhd}}}    % proper normal overgroup
+  \newcommand{\sgp}{\ensuremath{\mathrel{\leqslant}}} % subgroup
+  \newcommand{\ogp}{\ensuremath{\mathrel{\geqslant}}} % overgroup
+  \newcommand{\psgp}{\ensuremath{\mathrel{<}}}        % proper subgroup
+  \newcommand{\nsgp}{\ensuremath{\mathrel{\unlhd}}}   % normal subgroup
+  \newcommand{\nogp}{\ensuremath{\mathrel{\unrhd}}}   % normal overgroup
+  \newcommand{\pnsgp}{\ensuremath{\mathrel{\lhd}}}    % proper normal subgroup
+  \newcommand{\pnogp}{\ensuremath{\mathrel{\rhd}}}    % proper normal overgroup
 
-\newcommand{\qg}[2]{\ensuremath{#1/#2}} % quotient group
-\newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
-\newcommand{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugation
+  \newcommand{\qg}[2]{\ensuremath{#1/#2}} % quotient group
+  \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
+  \newcommand{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugation
 
-\newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
-\newcommand{\srg}{\ensuremath{\mathrel{\leqslant}}} % subring
-\newcommand{\psrg}{\ensuremath{\mathrel{<}}}        % proper subring
-\newcommand{\idl}{\ensuremath{\mathrel{\unlhd}}}    % ideal
-\newcommand{\pidl}{\ensuremath{\mathrel{\lhd}}}     % proper ideal
-\newcommand{\pid}[1]{\ensuremath{( #1 )}}           % principal ideal
-\newcommand{\notidl}{\ntriangleleft}                % not ideal
+  \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
+  \newcommand{\srg}{\ensuremath{\mathrel{\leqslant}}} % subring
+  \newcommand{\psrg}{\ensuremath{\mathrel{<}}}        % proper subring
+  \newcommand{\idl}{\ensuremath{\mathrel{\unlhd}}}    % ideal
+  \newcommand{\pidl}{\ensuremath{\mathrel{\lhd}}}     % proper ideal
+  \newcommand{\pid}[1]{\ensuremath{( #1 )}}           % principal ideal
+  \newcommand{\notidl}{\ntriangleleft}                % not ideal
 
-%% SUMMER 2024
-%%% STAT 350 "Introduction to Statistics"
-\newcommand{\dint}[2]{\int_{#1}^{#2}}
-\newcommand{\Dint}{\int_{-\infty}^{\infty}}
+% SUMMER 2024
+  % STAT 350 "Introduction to Statistics"
+  \newcommand{\dint}[2]{\int_{#1}^{#2}}
+  \newcommand{\Dint}{\int_{-\infty}^{\infty}}
 
-%% SPRING 2024
-%%% MA 341 "Foundations of Analysis"
-\newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
+% SPRING 2024
+  % MA 341 "Foundations of Analysis"
+  \newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
 
-%%% MA 35301 "Linear Algebra II"
-\newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
-\newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
+  % MA 35301 "Linear Algebra II"
+  \newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
+  \newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
 
-%% FALL 2023
-%%% MA 375 "Introduction to Discrete Mathematics"
-\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+% FALL 2023
+  % MA 375 "Introduction to Discrete Mathematics"
+  \newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
