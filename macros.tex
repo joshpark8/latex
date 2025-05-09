@@ -104,7 +104,7 @@
 \newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
 % Operators
-\DeclareMathOperator{\sign}{sign} % signum
+\DeclareMathOperator{\sgn}{sgn} % signum
 \DeclareMathOperator{\card}{card} % cardinality
 
 % Abstract Algebra
@@ -116,6 +116,7 @@
 \DeclareMathOperator{\Inn}{Inn}   % inner automorphism group
 \DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
 \DeclareMathOperator{\Gal}{Gal}   % Galois group
+\DeclareMathOperator{\Aff}{Aff}   % Affine group
 
 % Linear Algebra
 \DeclareMathOperator{\proj}{proj}   % projection
@@ -167,7 +168,7 @@
   \newcommand{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
   \newcommand{\sfe}{splitting field extension}
   \renewcommand{\sf}{splitting field}
-  \newcommand{\fdeg}[2]{\ensuremath{[ #1 : #2 ]}} % degree of field extension
+  \newcommand{\fdeg}[2]{\ensuremath{\left[ #1 : #2 \right]}} % degree of field extension
   \newcommand{\Fix}[2]{\ensuremath{\operatorname{Fix}_{#1}(#2)}} % Fixed field
   \newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
   \newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
@@ -212,7 +213,7 @@
   \newcommand{\pnogp}{\ensuremath{\mathrel{\rhd}}}    % proper normal overgroup
 
   \newcommand{\qg}[2]{\ensuremath{#1/#2}} % quotient group
-  \newcommand{\fr}[2]{\ensuremath{#1\,/\,#2}} % factor ring
+  \newcommand{\qr}[2]{\ensuremath{#1/#2}} % factor ring
   \newcommand{\conj}[2]{\ensuremath{#1 #2 #1\inv}} % conjugation
 
   \newcommand{\cl}[1]{\ensuremath{\operatorname{cl}( #1 )}} % conjugate class
