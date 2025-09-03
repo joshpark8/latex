@@ -1,9 +1,7 @@
 % preamble.tex
 \ProvidesPackage{preamble}
 
-% http://www.mit.edu/~lindrew/
-
-% >>==========|| Document setup ||==========<<
+% >>=============|| Document setup ||=============<<
 \usepackage[utf8]{inputenc}         % UTF-8 encoding
 \usepackage[T1]{fontenc}            % Improved font encoding
 \usepackage[english]{babel}         % Language settings
@@ -20,7 +18,7 @@
 \usepackage{mdframed}   % Create custom framed environments
 \usepackage{microtype}  % Adjusts spacing for better readability
 
-% >>==========|| Math packages ||==========<<
+% >>=============|| Math packages ||=============<<
 \usepackage{amsmath}     % Advanced math environments (align, gather, etc.)
 \usepackage{amsthm}      % Theorem-like environments
 \usepackage{amssymb}     % Additional math symbols (\mathbb, arrows, etc.)
@@ -29,12 +27,13 @@
 \makeatletter
 \renewcommand\thempfootnote{\arabic{mpfootnote}}
 \makeatother
+\usepackage{bm}
 \usepackage{systeme}     % Simplifies writing systems of equations
 \usepackage{mathtools}   % Extends amsmath with extra features
 \usepackage{mathdots}
 % \usepackage{stmaryrd}  % Specialized symbols for CS
 
-% >>==========|| Graphics and diagrams ||==========<<
+% >>=========|| Graphics and diagrams ||==========<<
 \usepackage{graphicx}   % Include images with \includegraphics
 \usepackage{wrapfig}    % \wrapfigure command
 \usepackage{tikz}       % Create diagrams, plots, and drawings
@@ -42,7 +41,7 @@
 \usepackage{tikz-cd}    % Specialized diagrams (e.g., commutative diagrams)
 \usepackage{float}
 
-% >>==========|| Fonts and text ||==========<<
+% >>=============|| Fonts and text ||=============<<
 \usepackage[varqu,varl]{inconsolata} % Monospaced font for code (CS 390ATA)
 \usepackage{xcolor}                  % Add colors for text and links
 \usepackage{hyperref}                % Create hyperlinks
@@ -51,17 +50,17 @@
 \usepackage{color}
 \usepackage{soul}
 \usepackage[normalem]{ulem}
+\usepackage{cancel}
 
-% >>==========|| Code listings and syntax ||==========<<
+% >>========|| Code listings and syntax ||========<<
 \usepackage[numbered,framed]{matlab-prettifier} % MATLAB code formatting
 \usepackage{listings}                           % Code listings (general-purpose)
-% \usepackage{fancyvrb}                           % robust verbatim
 
-% >>==========|| Miscellaneous packages ||==========<<
+% >>=========|| Miscellaneous packages ||=========<<
 \usepackage{silence}  % Suppress specific warnings
 % \WarningFilter{mdframed}{You got a bad break}
 
-% >>==========|| Commented-out or optional packages ||==========<<
+% >>===|| Commented-out or optional packages ||===<<
 % These are disabled by default but can be enabled as needed.
 % \usepackage{multicol}      % Multiple columns in a document
 % \usepackage{xparse}        % Create custom commands
@@ -69,10 +68,9 @@
 % \usepackage{bbm}           % Alternative blackboard bold (\mathbbm)
 % \usepackage{esvect}        % Vector arrows (\vv)
 % \usepackage{etoolbox}      % Advanced LaTeX macros and tools
+% \usepackage{fancyvrb}      % robust verbatim
 
-% \setlength{\parskip}{1em}
-
-% >>==========|| Additional options ||==========<<
+% >>===========|| Additional options ||===========<<
 
 \mdfsetup{skipabove=1em,skipbelow=0em} %puts space before and after
 
@@ -98,7 +96,7 @@
 	]{#1}
 }
 
-% >>==========|| Nested itemize ||==========<<
+% >>=============|| Nested itemize ||=============<<
 
 \setlistdepth{10}  % Increase itemize nesting depth
 
@@ -110,16 +108,30 @@
 
 % >>==========|| Theorem environments ||==========<<
 % Text environment
-\theoremstyle{definition}
 \newtheorem{ttheorem}{Theorem}[section]
+\newtheorem{tcorollary}[ttheorem]{Corollary}
 \newtheorem{tlemma}[ttheorem]{Lemma}
-\newtheorem{tcorollary}{Corollary}
-\newtheorem{tproposition}{Proposition}
-
-\newtheorem{tdefinition}{Definition}
-\newtheorem{tremark}{Remark}
-\newtheorem{texercise}{Exercise}
 \newtheorem{tfact}[ttheorem]{Fact}
+\newtheorem{tproposition}[ttheorem]{Proposition}
+\newtheorem{tremark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{tdefinition}{Definition}
+\newtheorem*{tdefinition2}{Definition}
+\newtheorem{texercise}{Exercise}
+
+% Rudin environment
+\newtheorem{rtheorem}{Theorem}[section]
+\newtheorem{rdefinition}[rtheorem]{Definition}
+\newtheorem*{rcorollary}{Corollary}
+\newtheorem{rlemma}[rtheorem]{Lemma}
+
+\newtheorem{rfact}[rtheorem]{Fact}
+\newtheorem{rproposition}[rtheorem]{Proposition}
+\newtheorem{rremark}[rtheorem]{Remark}
+
+\newtheorem*{rnote}{Note}
+\newtheorem{rexercise}{Exercise}[section]
 
 % Boxed environment
 \definecolor{oran}{HTML}{877AC6}
@@ -129,7 +141,8 @@
 \thmboxstyle{thmbox}{mdredbox}{redd}{blue!30!red!10}                % red; theorem box
 \thmboxstyle{exbox}{mdbluebox}{blue!110!red!66!green!66}{blue!5}    % cyan; example box
 \thmboxstyle{ntbox}{mdorangebox}{orange!50!brown}{yellow!5!olive!5} % orange; note box
-\thmboxstyle{exrbox}{mdpurplebox}{pink!70!red}{pink!10!white}       % purple; exercise box
+\thmboxstyle{exrbox}{mdpurplebox}{pink!70!red}{pink!10!white}       % pink; exercise box
+\thmboxstyle{sexrbox}{mdpinkbox}{pink!55!red}{pink!25!white}        % pink 2; exercise box
 
 \declaretheorem[style = thmbox, name = Theorem,     numberwithin = section]{theorem}
 \declaretheorem[style = thmbox, name = Lemma,       numberwithin = section]{lemma}
@@ -160,8 +173,12 @@
 \declaretheorem[style = plain, name = Question,     numbered = no]{ques}
 \declaretheorem[style = plain, name = Answer,       numbered = no]{ans}
 \declaretheorem[style = exrbox, name = Exercise,    numberwithin = section]{exercise}
-\declaretheorem[style = exrbox, name = Exercise,    numberwithin = exercise]{subexercise}
+\declaretheorem[style = sexrbox, name = Exercise,    numberwithin = exercise]{subexercise}
+\declaretheorem[style = sexrbox, name = Exercise,    numberwithin = exercise]{subexerciseA}
+\renewcommand{\thesubexerciseA}{\theexercise.\alph{subexerciseA}}
+
 \declaretheorem[style = exrbox, name = Prompt,      numberwithin = section]{prompt}
+\declaretheorem[style = exrbox, name = Instructions,      numbered = no]{instructions}
 
 \declaretheorem[style = plain, name = Claim]{claim}
 \declaretheorem[style = plain, name = Claim, numbered = no]{claim*}

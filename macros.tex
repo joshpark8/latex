@@ -2,149 +2,155 @@
 \ProvidesPackage{macros}
 
 % General
-\let\oldin\in
-\let\oldcdot\cdot
-\renewcommand{\in}{\ensuremath{\oldin}}
-\renewcommand{\cdot}{\ensuremath{\oldcdot}}
+  \let\oldin\in
+  \let\oldcdot\cdot
+  \renewcommand{\in}{\ensuremath{\oldin}}
+  \renewcommand{\cdot}{\ensuremath{\oldcdot}}
 
-\newcommand{\rtt}{\ensuremath{\sqrt{2}}}
-\newcommand{\thrt}{\ensuremath{\sqrt[3]}}
-\newcommand{\fort}{\ensuremath{\sqrt[4]}}
-\newcommand{\infrt}{\ensuremath{\sqrt[\infty]}}
+  \newcommand{\rtt}{\ensuremath{\sqrt{2}}}
+  \newcommand{\thrt}{\ensuremath{\sqrt[3]}}
+  \newcommand{\fort}{\ensuremath{\sqrt[4]}}
+  \newcommand{\infrt}{\ensuremath{\sqrt[\infty]}}
 
-\newcommand{\lt}{\left}
-\newcommand{\rt}{\right}
+  \newcommand{\lt}{\left}
+  \newcommand{\rt}{\right}
 
-\newcommand{\imp}{\ensuremath{\implies}}
-\newcommand{\pmi}{\ensuremath{\impliedby}}
-\renewcommand{\iff}{\ensuremath{\Longleftrightarrow}}
+  \newcommand{\imp}{\ensuremath{\implies}}
+  \newcommand{\pmi}{\ensuremath{\impliedby}}
+  \renewcommand{\iff}{\ensuremath{\Longleftrightarrow}}
 
-\newcommand{\qimp}{\ensuremath{\quad\implies\quad}}
-\newcommand{\qpmi}{\ensuremath{\quad\impliedby\quad}}
-\newcommand{\qiff}{\ensuremath{\quad\iff\quad}}
+  \newcommand{\qimp}{\ensuremath{\quad\implies\quad}}
+  \newcommand{\qpmi}{\ensuremath{\quad\impliedby\quad}}
+  \newcommand{\qiff}{\ensuremath{\quad\iff\quad}}
+  \newcommand{\qqquad}{\ensuremath{\qquad\qquad}}
 
-\newcommand{\tand}{\text{ and }}
-\newcommand{\tor}{\text{ or }}
-\newcommand{\tst}{\text{ such that }}
+  \newcommand{\tand}{\text{ and }}
+  \newcommand{\tor}{\text{ or }}
+  \newcommand{\tst}{\text{ such that }}
 
-\newcommand{\qand}{\ensuremath{\quad\text{and}\quad}}
-\newcommand{\qor}{\ensuremath{\quad\text{or}\quad}}
-\newcommand{\qst}{\ensuremath{\quad\text{such that}\quad}}
+  \newcommand{\qand}{\ensuremath{\quad\text{and}\quad}}
+  \newcommand{\qor}{\ensuremath{\quad\text{or}\quad}}
+  \newcommand{\qst}{\ensuremath{\quad\text{such that}\quad}}
 
-\newcommand{\lprod}{\mathop{\prod}\limits}
-\newcommand{\lsum}{\mathop{\sum}\limits}
+  \newcommand{\lprod}{\mathop{\prod}\limits}
+  \newcommand{\lsum}{\mathop{\sum}\limits}
 
-\newcommand{\eps}{\epsilon} % epsilon
-\newcommand{\veps}{\varepsilon} % epsilon variant
-\newcommand{\vphi}{\varphi} % epsilon variant
+  \newcommand{\eps}{\epsilon} % epsilon
+  \newcommand{\veps}{\varepsilon} % epsilon variant
+  \newcommand{\vphi}{\varphi} % epsilon variant
 
-\newcommand{\sq}{^2} % squared
-\newcommand{\cb}{^3} % cubed
+  \newcommand{\sq}{^2} % squared
+  \newcommand{\cb}{^3} % cubed
 
-\newcommand{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
-\newcommand{\sseq}{\ensuremath{\subseteq}} % subset or equal
-\newcommand{\supeq}{\ensuremath{\supseteq}} % superset or equal
+  \newcommand{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
+  \newcommand{\sseq}{\ensuremath{\subseteq}} % subset or equal
+  \newcommand{\supeq}{\ensuremath{\supseteq}} % superset or equal
 
-\newcommand{\boolT}{\tmo{true}}  % boolean true
-\newcommand{\boolF}{\tmo{false}} % boolean false
+  \newcommand{\boolT}{\tmo{true}}  % boolean true
+  \newcommand{\boolF}{\tmo{false}} % boolean false
 
-\newcommand{\N}{\bbN} % Natural numbers
-\newcommand{\Z}{\bbZ} % Integers
-\newcommand{\Q}{\bbQ} % Rational numbers
-\newcommand{\R}{\bbR} % Real numbers
-\newcommand{\C}{\bbC} % Complex numbers
+  \newcommand{\N}{\ensuremath{\bbN}} % Natural numbers
+  \newcommand{\Z}{\ensuremath{\bbZ}} % Integers
+  \newcommand{\Q}{\ensuremath{\bbQ}} % Rational numbers
+  \newcommand{\R}{\ensuremath{\bbR}} % Real numbers
 
+  \newcommand{\C}{\ensuremath{\bbC}} % Complex numbers
 
-\newcommand{\F}{\bbF} % Finite field
-\newcommand{\K}{\bbK} % General field
+  \newcommand{\Rk}{\ensuremath{\R^{k}}} % Euclidean k-space
+  \newcommand{\Rn}{\ensuremath{\R^{n}}} % Euclidean n-space
+  \newcommand{\Rm}{\ensuremath{\R^{m}}} % Euclidean m-space
 
-\newcommand{\ol}{\overline}
-\newcommand{\wt}{\widetilde}
-\newcommand{\wh}{\widehat}
-\renewcommand{\bar}[1]{\ol{#1}}
+  \newcommand{\F}{\ensuremath{\bbF}} % Finite field
+  \newcommand{\K}{\ensuremath{\bbK}} % General field
 
-\newcommand{\Abar}{\ensuremath{\bar{A}}}
-\newcommand{\Bbar}{\ensuremath{\bar{B}}} % cdef
-\newcommand{\Gbar}{\ensuremath{\bar{G}}}
-\newcommand{\Hbar}{\ensuremath{\bar{H}}} % ij
-\newcommand{\Kbar}{\ensuremath{\bar{K}}}
-\newcommand{\Lbar}{\ensuremath{\bar{L}}}
-\newcommand{\Mbar}{\ensuremath{\bar{M}}} % nopqrstuvwxyz
+  \newcommand{\ol}{\overline}
+  \newcommand{\wt}{\widetilde}
+  \newcommand{\wh}{\widehat}
+  \renewcommand{\bar}[1]{\ol{#1}}
 
-\newcommand{\abar}{\ensuremath{\bar{a}}} % bcd
-\newcommand{\ebar}{\ensuremath{\bar{e}}} % fghijklmnopqrstuv
-\newcommand{\wbar}{\ensuremath{\bar{w}}}
-\newcommand{\xbar}{\ensuremath{\bar{x}}} % yz
+  \newcommand{\Abar}{\ensuremath{\bar{A}}}
+  \newcommand{\Bbar}{\ensuremath{\bar{B}}} % cdef
+  \newcommand{\Gbar}{\ensuremath{\bar{G}}}
+  \newcommand{\Hbar}{\ensuremath{\bar{H}}} % ij
+  \newcommand{\Kbar}{\ensuremath{\bar{K}}}
+  \newcommand{\Lbar}{\ensuremath{\bar{L}}}
+  \newcommand{\Mbar}{\ensuremath{\bar{M}}} % nopqrstuvwxyz
 
-\newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers mod input under addition
-\newcommand{\Zn}{\ensuremath{\Z_n}}      % group of nonnegative integers mod n under addition
-\newcommand{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers mod 2 under addition
-\newcommand{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers mod 3 under addition
-\newcommand{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers mod 4 under addition
-\newcommand{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers mod 5 under addition
-\newcommand{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers mod 6 under addition
-\newcommand{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers mod 7 under addition
-\newcommand{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers mod 8 under addition
-\newcommand{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers mod 9 under addition
-\newcommand{\Zte}{\ensuremath{\Z_{10}}}  % group of nonnegative integers mod 10 under addition
+  \newcommand{\abar}{\ensuremath{\bar{a}}} % bcd
+  \newcommand{\ebar}{\ensuremath{\bar{e}}} % fghijklmnopqrstuv
+  \newcommand{\wbar}{\ensuremath{\bar{w}}}
+  \newcommand{\xbar}{\ensuremath{\bar{x}}}
+  \newcommand{\ybar}{\ensuremath{\bar{y}}}
+  \newcommand{\zbar}{\ensuremath{\bar{z}}}
 
-\newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of n elements
-\newcommand{\Ftw}{\ensuremath{\F_2}}     % finite field of 2 elements
-\newcommand{\Fth}{\ensuremath{\F_3}}     % finite field of 3 elements
-\newcommand{\Ffo}{\ensuremath{\F_4}}     % finite field of 4 elements
-\newcommand{\Ffi}{\ensuremath{\F_5}}     % finite field of 5 elements
-\newcommand{\Fsi}{\ensuremath{\F_6}}     % finite field of 6 elements
-\newcommand{\Fse}{\ensuremath{\F_7}}     % finite field of 7 elements
-\newcommand{\Fei}{\ensuremath{\F_8}}     % finite field of 8 elements
-\newcommand{\Fni}{\ensuremath{\F_9}}     % finite field of 9 elements
-\newcommand{\Fte}{\ensuremath{\F_{10}}}  % finite field of 10 elements
+  \newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers mod input under addition
+  \newcommand{\Zn}{\ensuremath{\Z_n}}      % group of nonnegative integers mod n under addition
+  \newcommand{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers mod 2 under addition
+  \newcommand{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers mod 3 under addition
+  \newcommand{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers mod 4 under addition
+  \newcommand{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers mod 5 under addition
+  \newcommand{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers mod 6 under addition
+  \newcommand{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers mod 7 under addition
+  \newcommand{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers mod 8 under addition
+  \newcommand{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers mod 9 under addition
+  \newcommand{\Zte}{\ensuremath{\Z_{10}}}  % group of nonnegative integers mod 10 under addition
 
-\newcommand{\half}{\frac{1}{2}}
+  \newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of n elements
+  \newcommand{\Ftw}{\ensuremath{\F_2}}     % finite field of 2 elements
+  \newcommand{\Fth}{\ensuremath{\F_3}}     % finite field of 3 elements
+  \newcommand{\Ffo}{\ensuremath{\F_4}}     % finite field of 4 elements
+  \newcommand{\Ffi}{\ensuremath{\F_5}}     % finite field of 5 elements
+  \newcommand{\Fsi}{\ensuremath{\F_6}}     % finite field of 6 elements
+  \newcommand{\Fse}{\ensuremath{\F_7}}     % finite field of 7 elements
+  \newcommand{\Fei}{\ensuremath{\F_8}}     % finite field of 8 elements
+  \newcommand{\Fni}{\ensuremath{\F_9}}     % finite field of 9 elements
+  \newcommand{\Fte}{\ensuremath{\F_{10}}}  % finite field of 10 elements
 
-\newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
+  \newcommand{\half}{\frac{1}{2}}
 
-% Operators
-\DeclareMathOperator{\sgn}{sgn} % signum
-\DeclareMathOperator{\card}{card} % cardinality
+  \newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
-% Abstract Algebra
-\DeclareMathOperator{\orb}{orb}   % orbit
-\DeclareMathOperator{\stab}{stab} % stabilizer
-\DeclareMathOperator{\chr}{char}  % characteristic
-\DeclareMathOperator{\perm}{Perm} % permutation
-\DeclareMathOperator{\Aut}{Aut}   % automorphism group
-\DeclareMathOperator{\Inn}{Inn}   % inner automorphism group
-\DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
-\DeclareMathOperator{\Gal}{Gal}   % Galois group
-\DeclareMathOperator{\Aff}{Aff}   % Affine group
+% Special functions
+  \DeclareMathOperator{\sgn}{sgn} % signum
+  \DeclareMathOperator{\card}{card} % cardinality
 
-% Linear Algebra
-\DeclareMathOperator{\proj}{proj}   % projection
-\DeclareMathOperator{\Span}{span}   % span
+% Abstract Algebra functions
+  \DeclareMathOperator{\orb}{orb}   % orbit
+  \DeclareMathOperator{\stab}{stab} % stabilizer
+  \DeclareMathOperator{\chr}{char}  % characteristic
+  \DeclareMathOperator{\perm}{Perm} % permutation
+  \DeclareMathOperator{\Aut}{Aut}   % automorphism group
+  \DeclareMathOperator{\Inn}{Inn}   % inner automorphism group
+  \DeclareMathOperator{\Syl}{Syl}   % Sylow subgroup
+  \DeclareMathOperator{\Gal}{Gal}   % Galois group
+  \DeclareMathOperator{\Aff}{Aff}   % Affine group
 
-% Statistics
-\DeclareMathOperator{\var}{\text{Var}} % variance
+% Linear Algebra functions
+  \DeclareMathOperator{\proj}{proj}   % projection
+  \DeclareMathOperator{\Span}{span}   % span
 
+% Statistics functions
+  \DeclareMathOperator{\var}{\text{Var}} % variance
 
-% Font variations
-\newcommand{\nf}[1]{\textnormal{#1}}  % normal
-\newcommand{\bd}[1]{\textbf{#1}}      % bold
-\newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
-\renewcommand{\it}[1]{\emph{#1}}      % italics
-\renewcommand{\ul}[1]{\uline{#1}}     % underline
-
+% Font variation
+  \newcommand{\nf}[1]{\textnormal{#1}}  % normal
+  \newcommand{\bd}[1]{\textbf{#1}}      % bold
+  \newcommand{\tmo}[1]{\texttt{#1}}     % monospace/typewriter
+  \renewcommand{\it}[1]{\emph{#1}}      % italics
+  \renewcommand{\ul}[1]{\uline{#1}}     % underline
 
 % Add images to document
-\newcommand{\img}[2]{\begin{figure}[H] % arg 1: image path, arg 2: width/scale
-  \centering%
-  \includegraphics[width=#2 \textwidth]{#1}%
-\end{figure}
-}
+  \newcommand{\img}[2]{\begin{figure}[H] % arg 1: image path, arg 2: width/scale
+    \centering%
+    \includegraphics[width=#2 \textwidth]{#1}%
+  \end{figure}
+  }
 
 % Homework solution environment
-\newenvironment{solution}%
-{\begin{proof}[Solution]}%
-  {\end{proof}}
+  \newenvironment{solution}[1][]%
+    {\begin{proof}[Solution%
+        \if\relax\detokenize{#1}\relax\else\ (#1)\fi]}%
+    {\end{proof}}
 
   % Subproof
   \newenvironment{subproof}[1][Proof]{%
@@ -152,8 +158,7 @@
     {\end{proof}}
 
 
-% Course specific
-
+% >>========|| Course specific  ||========<<
 % SPRING 2025
   % CS 390 ATA "Advanced Topics on Algorithms"
   \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
