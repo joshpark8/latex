@@ -1,19 +1,20 @@
 % macros.tex
-\ProvidesPackage{macros}
-
+% \ProvidesPackage{macros}
+\usepackage[normalem]{ulem}
 % General
   \let\oldin\in
   \let\oldcdot\cdot
   \renewcommand{\in}{\ensuremath{\oldin}}
   \renewcommand{\cdot}{\ensuremath{\oldcdot}}
 
-  \newcommand{\rtt}{\ensuremath{\sqrt{2}}}
-  \newcommand{\thrt}{\ensuremath{\sqrt[3]}}
-  \newcommand{\fort}{\ensuremath{\sqrt[4]}}
-  \newcommand{\infrt}{\ensuremath{\sqrt[\infty]}}
+  \renewcommand{\emptyset}{\ensuremath{\varnothing}}
 
-  \newcommand{\lt}{\left}
-  \newcommand{\rt}{\right}
+  \newcommand{\toinf}{\ensuremath{\to\infty}}
+
+  \newcommand{\dd}[2]{\ensuremath{\frac{d#1}{d#2}}}
+  \newcommand{\pdd}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+
+  \newcommand{\rtt}{\ensuremath{\sqrt{2}}}
 
   \newcommand{\imp}{\ensuremath{\implies}}
   \newcommand{\pmi}{\ensuremath{\impliedby}}
@@ -26,23 +27,26 @@
 
   \newcommand{\tand}{\text{ and }}
   \newcommand{\tor}{\text{ or }}
-  \newcommand{\tst}{\text{ such that }}
+  \newcommand{\tst}{\text{ s.t. }}
 
-  \newcommand{\qand}{\ensuremath{\quad\text{and}\quad}}
-  \newcommand{\qor}{\ensuremath{\quad\text{or}\quad}}
-  \newcommand{\qst}{\ensuremath{\quad\text{such that}\quad}}
+  \newcommand{\qand}{\quad\tand\quad}
+  \newcommand{\qqand}{\quad\quad\tand\quad\quad}
+  \newcommand{\qor}{\quad\tor\quad}
+  \newcommand{\qqor}{\quad\quad\tor\quad\quad}
+  \newcommand{\qst}{\quad\tst\quad}
+  \newcommand{\qqst}{\quad\quad\tst\quad\quad}
 
-  \newcommand{\lprod}{\mathop{\prod}\limits}
-  \newcommand{\lsum}{\mathop{\sum}\limits}
+  \newcommand{\limntoinf}{\ensuremath{\lim_{n\to\infty}}}
+  \newcommand{\limtoinf}[1]{\ensuremath{\lim_{#1\to\infty}}}
 
-  \newcommand{\eps}{\epsilon} % epsilon
-  \newcommand{\veps}{\varepsilon} % epsilon variant
-  \newcommand{\vphi}{\varphi} % epsilon variant
+  \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
+  \newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
 
   \newcommand{\sq}{^2} % squared
   \newcommand{\cb}{^3} % cubed
+  \newcommand{\half}{\frac{1}{2}}
 
-  \newcommand{\nonzero}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
+  \newcommand{\nz}[1]{\ensuremath{#1_{\neq 0}}} % nonzero element
   \newcommand{\sseq}{\ensuremath{\subseteq}} % subset or equal
   \newcommand{\supeq}{\ensuremath{\supseteq}} % superset or equal
 
@@ -53,7 +57,6 @@
   \newcommand{\Z}{\ensuremath{\bbZ}} % Integers
   \newcommand{\Q}{\ensuremath{\bbQ}} % Rational numbers
   \newcommand{\R}{\ensuremath{\bbR}} % Real numbers
-
   \newcommand{\C}{\ensuremath{\bbC}} % Complex numbers
 
   \newcommand{\Rk}{\ensuremath{\R^{k}}} % Euclidean k-space
@@ -68,53 +71,72 @@
   \newcommand{\wh}{\widehat}
   \renewcommand{\bar}[1]{\ol{#1}}
 
-  \newcommand{\Abar}{\ensuremath{\bar{A}}}
-  \newcommand{\Bbar}{\ensuremath{\bar{B}}} % cdef
-  \newcommand{\Gbar}{\ensuremath{\bar{G}}}
-  \newcommand{\Hbar}{\ensuremath{\bar{H}}} % ij
-  \newcommand{\Kbar}{\ensuremath{\bar{K}}}
-  \newcommand{\Lbar}{\ensuremath{\bar{L}}}
-  \newcommand{\Mbar}{\ensuremath{\bar{M}}} % nopqrstuvwxyz
-
-  \newcommand{\abar}{\ensuremath{\bar{a}}} % bcd
-  \newcommand{\ebar}{\ensuremath{\bar{e}}} % fghijklmnopqrstuv
-  \newcommand{\wbar}{\ensuremath{\bar{w}}}
-  \newcommand{\xbar}{\ensuremath{\bar{x}}}
-  \newcommand{\ybar}{\ensuremath{\bar{y}}}
-  \newcommand{\zbar}{\ensuremath{\bar{z}}}
-
-  \newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % group of nonnegative integers mod input under addition
-  \newcommand{\Zn}{\ensuremath{\Z_n}}      % group of nonnegative integers mod n under addition
-  \newcommand{\Ztw}{\ensuremath{\Z_2}}     % group of nonnegative integers mod 2 under addition
-  \newcommand{\Zth}{\ensuremath{\Z_3}}     % group of nonnegative integers mod 3 under addition
-  \newcommand{\Zfo}{\ensuremath{\Z_4}}     % group of nonnegative integers mod 4 under addition
-  \newcommand{\Zfi}{\ensuremath{\Z_5}}     % group of nonnegative integers mod 5 under addition
-  \newcommand{\Zsi}{\ensuremath{\Z_6}}     % group of nonnegative integers mod 6 under addition
-  \newcommand{\Zse}{\ensuremath{\Z_7}}     % group of nonnegative integers mod 7 under addition
-  \newcommand{\Zei}{\ensuremath{\Z_8}}     % group of nonnegative integers mod 8 under addition
-  \newcommand{\Zni}{\ensuremath{\Z_9}}     % group of nonnegative integers mod 9 under addition
-  \newcommand{\Zte}{\ensuremath{\Z_{10}}}  % group of nonnegative integers mod 10 under addition
-
-  \newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of n elements
-  \newcommand{\Ftw}{\ensuremath{\F_2}}     % finite field of 2 elements
-  \newcommand{\Fth}{\ensuremath{\F_3}}     % finite field of 3 elements
-  \newcommand{\Ffo}{\ensuremath{\F_4}}     % finite field of 4 elements
-  \newcommand{\Ffi}{\ensuremath{\F_5}}     % finite field of 5 elements
-  \newcommand{\Fsi}{\ensuremath{\F_6}}     % finite field of 6 elements
-  \newcommand{\Fse}{\ensuremath{\F_7}}     % finite field of 7 elements
-  \newcommand{\Fei}{\ensuremath{\F_8}}     % finite field of 8 elements
-  \newcommand{\Fni}{\ensuremath{\F_9}}     % finite field of 9 elements
-  \newcommand{\Fte}{\ensuremath{\F_{10}}}  % finite field of 10 elements
-
-  \newcommand{\half}{\frac{1}{2}}
-
   \newcommand{\llist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
+  \newcommand{\alist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
+  \newcommand{\mlist}[3]{\ensuremath{#1_{#2},\ldots,#1_{#3}}}
 
-% Special functions
+  % \newcommand{\Abar}{\ensuremath{\bar{A}}}
+  % \newcommand{\Bbar}{\ensuremath{\bar{B}}} % cdef
+  % \newcommand{\Gbar}{\ensuremath{\bar{G}}}
+  % \newcommand{\Hbar}{\ensuremath{\bar{H}}} % ij
+  % \newcommand{\Kbar}{\ensuremath{\bar{K}}}
+  % \newcommand{\Lbar}{\ensuremath{\bar{L}}}
+  % \newcommand{\Mbar}{\ensuremath{\bar{M}}} % nopqrstuvwxyz
+
+  % \newcommand{\abar}{\ensuremath{\bar{a}}} % bcdefghijklmnopqrstuv
+  % \newcommand{\wbar}{\ensuremath{\bar{w}}}
+  % \newcommand{\xbar}{\ensuremath{\bar{x}}}
+  % \newcommand{\ybar}{\ensuremath{\bar{y}}}
+  % \newcommand{\zbar}{\ensuremath{\bar{z}}}
+
+  % \newcommand{\ZZ}[1]{\ensuremath{\Z_{#1}}} % Z mod input
+  % \newcommand{\Zn}{\ensuremath{\Z_n}}      % Z mod n
+  % \newcommand{\Ztw}{\ensuremath{\Z_2}}     % Z mod 2
+  % \newcommand{\Zth}{\ensuremath{\Z_3}}     % Z mod 3
+  % \newcommand{\Zfo}{\ensuremath{\Z_4}}     % Z mod 4
+  % \newcommand{\Zfi}{\ensuremath{\Z_5}}     % Z mod 5
+  % \newcommand{\Zsi}{\ensuremath{\Z_6}}     % Z mod 6
+  % \newcommand{\Zse}{\ensuremath{\Z_7}}     % Z mod 7
+  % \newcommand{\Zei}{\ensuremath{\Z_8}}     % Z mod 8
+  % \newcommand{\Zni}{\ensuremath{\Z_9}}     % Z mod 9
+  % \newcommand{\Zte}{\ensuremath{\Z_{10}}}  % Z mod 10
+
+  % \newcommand{\FF}[1]{\ensuremath{\F_{#1}}} % finite field of input elements
+  % \newcommand{\Fn}{\ensuremath{\F_n}} % finite field of input elements
+  % \newcommand{\Ftw}{\ensuremath{\F_2}}      % finite field of 2 elements
+  % \newcommand{\Fth}{\ensuremath{\F_3}}      % finite field of 3 elements
+  % \newcommand{\Ffo}{\ensuremath{\F_4}}      % finite field of 4 elements
+  % \newcommand{\Ffi}{\ensuremath{\F_5}}      % finite field of 5 elements
+  % \newcommand{\Fsi}{\ensuremath{\F_6}}      % finite field of 6 elements
+  % \newcommand{\Fse}{\ensuremath{\F_7}}      % finite field of 7 elements
+  % \newcommand{\Fei}{\ensuremath{\F_8}}      % finite field of 8 elements
+  % \newcommand{\Fni}{\ensuremath{\F_9}}      % finite field of 9 elements
+  % \newcommand{\Fte}{\ensuremath{\F_{10}}}   % finite field of 10 elements
+
+
+  % Greek
+  \newcommand{\f}{\phi}
+  \newcommand{\vf}{\varphi}
+
+  \newcommand{\e}{\epsilon}
+  \newcommand{\ve}{\varepsilon}
+
+  % Operators
   \DeclareMathOperator{\sgn}{sgn} % signum
   \DeclareMathOperator{\card}{card} % cardinality
 
-% Abstract Algebra functions
+  % Topology
+  \DeclareMathOperator{\Int}{Int}
+
+
+  % Analysis
+  \DeclareMathOperator{\re}{Re} % real part
+  \DeclareMathOperator{\im}{Im} % imaginary part
+  \DeclareMathOperator{\Arg}{Arg} % argument
+  \DeclareMathOperator{\Log}{Log} % principal logarithm
+  \DeclareMathOperator{\res}{Res} % residue
+
+  % Algebra
   \DeclareMathOperator{\orb}{orb}   % orbit
   \DeclareMathOperator{\stab}{stab} % stabilizer
   \DeclareMathOperator{\chr}{char}  % characteristic
@@ -125,11 +147,10 @@
   \DeclareMathOperator{\Gal}{Gal}   % Galois group
   \DeclareMathOperator{\Aff}{Aff}   % Affine group
 
-% Linear Algebra functions
   \DeclareMathOperator{\proj}{proj}   % projection
   \DeclareMathOperator{\Span}{span}   % span
 
-% Statistics functions
+  % Statistics
   \DeclareMathOperator{\var}{\text{Var}} % variance
 
 % Font variation
@@ -140,69 +161,48 @@
   \renewcommand{\ul}[1]{\uline{#1}}     % underline
 
 % Add images to document
-  \newcommand{\img}[2]{\begin{figure}[H] % arg 1: image path, arg 2: width/scale
+  \newcommand{\img}[2]{\begin{figure}[H] % $1 image path, $2 width/scale
     \centering%
     \includegraphics[width=#2 \textwidth]{#1}%
   \end{figure}
   }
 
-% Homework solution environment
-  \newenvironment{solution}[1][]%
-    {\begin{proof}[Solution%
-        \if\relax\detokenize{#1}\relax\else\ (#1)\fi]}%
-    {\end{proof}}
-
-  % Subproof
-  \newenvironment{subproof}[1][Proof]{%
-  \begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
-    {\end{proof}}
-
-
 % >>========|| Course specific  ||========<<
-% SPRING 2025
+  % MA 440 "Honors Real Analysis"
+    \newcommand{\ab}[1]{\ensuremath{\left\vert #1 \right\vert}} % absolute value
+    \newcommand{\ip}[2]{\ensuremath{\left\langle #1,\!\ #2 \right\rangle}} % inner product
+    \newcommand{\norm}[1]{\ensuremath{ \left\vert\:\!\!\left\vert #1 \right\vert\: \!\!\right\vert}} % vector norm
+    \newcommand{\xnk}{\ensuremath{x_{n_k}}}
+    \DeclareMathOperator{\osc}{osc}
+    \DeclareMathOperator{\diam}{diam}
+
+  % MA 525 "Introduction to Complex Analysis"
+
   % CS 390 ATA "Advanced Topics on Algorithms"
-  \newcommand{\floor}[1]{\ensuremath{\lfloor #1 \rfloor}}
-  \newcommand{\ceil}[1]{\ensuremath{\lceil #1 \rceil}}
-  \newcommand{\doc}[1]{\noindent\it{\color{commentgreen} \texttt{/*}\ #1 \hfill \texttt{*/}}}
-  \newcommand{\defalgo}[2]{\noindent\uline{\tmo{#1(\ensuremath{#2}):}}}
-  \newcommand{\rcomm}[1]{\it{\color{commentgreen} \hfill \texttt{//} #1 }}
-  \newcommand{\lcomm}[1]{\it{\color{commentgreen} \texttt{//} #1 }}
-  \newcommand{\subcall}[2]{\tmo{\uline{#1(\ensuremath{#2})}}}
+    % \newcommand{\defalgo}[2]{\noindent\uline{\tmo{#1(\ensuremath{#2}):}}}
+    % \newcommand{\rcomm}[1]{\it{\color{commentgreen} \hfill \texttt{//} #1 }}
+    % \newcommand{\lcomm}[1]{\it{\color{commentgreen} \texttt{//} #1 }}
+    % \newcommand{\subcall}[2]{\tmo{\uline{#1(\ensuremath{#2})}}}
 
   % MA 454 "Galois Theory Honors"
-  \newcommand{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
-  \newcommand{\sfe}{splitting field extension}
-  \renewcommand{\sf}{splitting field}
-  \newcommand{\fdeg}[2]{\ensuremath{\left[ #1 : #2 \right]}} % degree of field extension
-  \newcommand{\Fix}[2]{\ensuremath{\operatorname{Fix}_{#1}(#2)}} % Fixed field
-  \newcommand{\Tr}[1]{\ensuremath{\operatorname{Tr}(#1)}} % Trace
-  \newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
-  \newcommand{\id}{\nf{Id.}} % Identity element
-
-% FALL 2024
-  % CS 314 "Numerical Methods"
-  \newcommand{\Prob}{\bbP} % Probability
-  \newcommand{\Exep}{\bbE} % Expected value
+    % \newcommand{\mak}{\ensuremath{\mu_\alpha^K}} % minimum polynomial of alpha over K
+    % \newcommand{\fdeg}[2]{\ensuremath{\left[ #1 : #2 \right]}} % degree of field extension
+    \newcommand{\Fix}{\ensuremath{\operatorname{Fix}}} % Fixed field
+    \newcommand{\Tr}{\ensuremath{\operatorname{Tr}}} % Trace
+    % \newcommand{\Norm}[1]{\ensuremath{\operatorname{Norm}(#1)}} % Norm
+    \newcommand{\id}{\nf{Id.}} % Identity element
 
   % MA 425 "Elements of Complex Analysis"
-  \newcommand{\len}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
-  \newcommand{\re}{\operatorname{Re}} % Real part
-  \newcommand{\im}{\operatorname{Im}} % Imaginary part
-  \newcommand{\Arg}{\operatorname{Arg}} % Argument
+    %
 
   % MA 450 "Honors Abstract Algebra"
+    % \newcommand{\homo}{\text{homomorphism}} % hom
+    \newcommand{\inv}{\ensuremath{^{-1}}}   % inverse element
+    \newcommand{\tgp}{\nf{\{\id\}}}   % trivial subgroup
+    \newcommand{\iso}{\cong}       % isomorphism
+    \newcommand{\edp}{\oplus}      % external direct product
 
-  \newcommand{\homo}{\text{homomorphism}} % hom
-  \newcommand{\inv}{\ensuremath{^{-1}}}   % inverse element
-  \newcommand{\tgp}{\nf{\{\id\}}}   % trivial subgroup
-  \newcommand{\iso}{\cong}       % isomorphism
-  \newcommand{\edp}{\oplus}      % external direct product
-  \newcommand{\idp}{\times}      % internal direct product
-  \newcommand{\U}[1]{\nf{U}(#1)} % group of units modulo n under multiplication
-
-  \newcommand{\contradiction}{\ensuremath{(\Rightarrow\!\Leftarrow)}} % contradiction
-
-  \newcommand{\order}[1]{\ensuremath{\lt\vert #1 \rt\vert}} % order of element/group
+  \newcommand{\order}[1]{\ensuremath{\left\vert #1 \right\vert}} % order of element/group
   \newcommand{\cyc}[1]{\ensuremath{\langle #1 \rangle}}     % cyclic group
   \renewcommand{\index}[2]{\ensuremath{[ #1 : #2 ]}}        % coset index
 
@@ -229,19 +229,9 @@
   \newcommand{\pid}[1]{\ensuremath{( #1 )}}           % principal ideal
   \newcommand{\notidl}{\ntriangleleft}                % not ideal
 
-% SUMMER 2024
   % STAT 350 "Introduction to Statistics"
   \newcommand{\dint}[2]{\int_{#1}^{#2}}
   \newcommand{\Dint}{\int_{-\infty}^{\infty}}
 
-% SPRING 2024
-  % MA 341 "Foundations of Analysis"
-  \newcommand{\abs}[1]{\ensuremath{\lt\vert #1 \rt\vert}}
-
-  % MA 35301 "Linear Algebra II"
-  \newcommand{\inner}[2]{\ensuremath{\lt\langle #1, #2 \rt\rangle}}
-  \newcommand{\norm}[1]{\ensuremath{\lt\vert\lt\vert #1 \rt\vert\rt\vert}}
-
-% FALL 2023
   % MA 375 "Introduction to Discrete Mathematics"
   \newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}

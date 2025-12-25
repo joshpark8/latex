@@ -1,5 +1,5 @@
 % preamble.tex
-\ProvidesPackage{preamble}
+% \ProvidesPackage{preamble}
 
 % >>=============|| Document setup ||=============<<
 \usepackage[utf8]{inputenc}         % UTF-8 encoding
@@ -96,6 +96,21 @@
 	]{#1}
 }
 
+% >>=============|| Solution environments ||=============<<
+
+  % Homework solution environment
+  \newenvironment{solution}[1][]%
+    {\begin{proof}[Solution%
+        \if\relax\detokenize{#1}\relax\else\ (#1)\fi]}%
+    {\end{proof}}
+
+  % Subproof
+  \newenvironment{subproof}[1][Proof]{%
+  \begin{proof}[#1] \renewcommand{\qedsymbol}{$\blacksquare$}}%
+    {\end{proof}}
+
+
+
 % >>=============|| Nested itemize ||=============<<
 
 \setlistdepth{10}  % Increase itemize nesting depth
@@ -108,30 +123,30 @@
 
 % >>==========|| Theorem environments ||==========<<
 % Text environment
-\newtheorem{ttheorem}{Theorem}[section]
-\newtheorem{tcorollary}[ttheorem]{Corollary}
-\newtheorem{tlemma}[ttheorem]{Lemma}
-\newtheorem{tfact}[ttheorem]{Fact}
-\newtheorem{tproposition}[ttheorem]{Proposition}
-\newtheorem{tremark}{Remark}
+% \newtheorem{ttheorem}{Theorem}[section]
+% \newtheorem{tcorollary}[ttheorem]{Corollary}
+\newtheorem{lemma}{Lemma}
+% \newtheorem{tfact}[ttheorem]{Fact}
+% \newtheorem{tproposition}[ttheorem]{Proposition}
+% \newtheorem{tremark}{Remark}
 
-\theoremstyle{definition}
-\newtheorem{tdefinition}{Definition}
-\newtheorem*{tdefinition2}{Definition}
-\newtheorem{texercise}{Exercise}
+% \theoremstyle{definition}
+% \newtheorem{tdefinition}{Definition}
+% \newtheorem*{tdefinition2}{Definition}
+% \newtheorem{texercise}{Exercise}
 
 % Rudin environment
-\newtheorem{rtheorem}{Theorem}[section]
-\newtheorem{rdefinition}[rtheorem]{Definition}
-\newtheorem*{rcorollary}{Corollary}
-\newtheorem{rlemma}[rtheorem]{Lemma}
+% \newtheorem{rtheorem}{Theorem}[section]
+% \newtheorem{rdefinition}[rtheorem]{Definition}
+% \newtheorem*{rcorollary}{Corollary}
+% \newtheorem{rlemma}[rtheorem]{Lemma}
 
-\newtheorem{rfact}[rtheorem]{Fact}
-\newtheorem{rproposition}[rtheorem]{Proposition}
-\newtheorem{rremark}[rtheorem]{Remark}
+% \newtheorem{rfact}[rtheorem]{Fact}
+% \newtheorem{rproposition}[rtheorem]{Proposition}
+% \newtheorem{rremark}[rtheorem]{Remark}
 
-\newtheorem*{rnote}{Note}
-\newtheorem{rexercise}{Exercise}[section]
+% \newtheorem*{rnote}{Note}
+% \newtheorem{rexercise}{Exercise}[section]
 
 % Boxed environment
 \definecolor{oran}{HTML}{877AC6}
@@ -145,12 +160,12 @@
 \thmboxstyle{sexrbox}{mdpinkbox}{pink!55!red}{pink!25!white}        % pink 2; exercise box
 
 \declaretheorem[style = thmbox, name = Theorem,     numberwithin = section]{theorem}
-\declaretheorem[style = thmbox, name = Lemma,       numberwithin = section]{lemma}
+% \declaretheorem[style = thmbox, name = Lemma,       numberwithin = section]{lemma}
 \declaretheorem[style = thmbox, name = Proposition, numberwithin = section]{proposition}
 \declaretheorem[style = thmbox, name = Corollary,   numberwithin = theorem]{corollary}
 
 \declaretheorem[style = thmbox, name = Theorem,     numbered = no]{theorem*}
-\declaretheorem[style = thmbox, name = Lemma,       numbered = no]{lemma*}
+% \declaretheorem[style = thmbox, name = Lemma,       numbered = no]{lemma*}
 \declaretheorem[style = thmbox, name = Proposition, numbered = no]{proposition*}
 \declaretheorem[style = thmbox, name = Corollary,   numbered = no]{corollary*}
 
@@ -170,14 +185,14 @@
 \declaretheorem[style = ntbox, name = Note,         numbered = no]{note}
 \declaretheorem[style = ntbox, name = Notation,     numbered = no]{notation}
 
-\declaretheorem[style = plain, name = Question,     numbered = no]{ques}
+\declaretheorem[style = plain, name = Question,     numbered = yes]{ques}
 \declaretheorem[style = plain, name = Answer,       numbered = no]{ans}
 \declaretheorem[style = exrbox, name = Exercise,    numberwithin = section]{exercise}
 \declaretheorem[style = sexrbox, name = Exercise,    numberwithin = exercise]{subexercise}
 \declaretheorem[style = sexrbox, name = Exercise,    numberwithin = exercise]{subexerciseA}
 \renewcommand{\thesubexerciseA}{\theexercise.\alph{subexerciseA}}
 
-\declaretheorem[style = exrbox, name = Prompt,      numberwithin = section]{prompt}
+\declaretheorem[style = exrbox, name = Prompt,      numbered = no]{prompt}
 \declaretheorem[style = exrbox, name = Instructions,      numbered = no]{instructions}
 
 \declaretheorem[style = plain, name = Claim]{claim}
